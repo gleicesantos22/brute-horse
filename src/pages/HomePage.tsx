@@ -59,35 +59,49 @@ function HomePage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Enhanced Professional Navbar */}
+      {/* Professional Header */}
       <nav className="bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            <div className="flex-shrink-0">
-              <div className="flex items-center space-x-6">
-                <div>
-                  <h1 className="text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">BRUTE HORSE</h1>
-                  <p className="text-xs text-gray-500 font-medium tracking-wide">PREMIUM SUPPLEMENTS</p>
-                </div>
-                <img 
-                  src="/cavalo vetorizada.png" 
-                  alt="BRUTE HORSE Logo" 
-                  className="w-32 h-32 object-contain"
-                />
+            
+            {/* Logo Section - Left Side */}
+            <div className="flex items-center space-x-4">
+              <img 
+                src="/cavalo vetorizada.png" 
+                alt="BRUTE HORSE Logo" 
+                className="w-16 h-16 object-contain"
+              />
+              <div>
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">BRUTE HORSE</h1>
+                <p className="text-xs text-gray-500 font-medium tracking-wide">PREMIUM SUPPLEMENTS</p>
               </div>
             </div>
-            <div className="hidden lg:flex items-center space-x-8">
-              <div className="flex items-center space-x-2 text-sm text-gray-600 bg-gray-50 px-4 py-2 rounded-full">
+
+            {/* Trust Badges - Right Side */}
+            <div className="hidden lg:flex items-center space-x-6">
+              <div className="flex items-center space-x-2 text-sm text-gray-600 bg-gray-50 px-4 py-2 rounded-full border border-gray-200">
                 <Shield className="h-4 w-4 text-blue-500" />
                 <span className="font-medium">180 Days Guarantee</span>
               </div>
-              <div className="flex items-center space-x-2 text-sm text-gray-600 bg-gray-50 px-4 py-2 rounded-full">
+              <div className="flex items-center space-x-2 text-sm text-gray-600 bg-gray-50 px-4 py-2 rounded-full border border-gray-200">
                 <Truck className="h-4 w-4 text-green-500" />
                 <span className="font-medium">Free Worldwide Shipping</span>
               </div>
-              <div className="flex items-center space-x-2 text-sm text-gray-600 bg-gray-50 px-4 py-2 rounded-full">
+              <div className="flex items-center space-x-2 text-sm text-gray-600 bg-gray-50 px-4 py-2 rounded-full border border-gray-200">
                 <Award className="h-4 w-4 text-purple-500" />
                 <span className="font-medium">FDA Approved</span>
+              </div>
+            </div>
+
+            {/* Mobile Trust Badges */}
+            <div className="lg:hidden flex items-center space-x-3">
+              <div className="flex items-center space-x-1 text-xs text-gray-600 bg-gray-50 px-3 py-2 rounded-full border border-gray-200">
+                <Shield className="h-3 w-3 text-blue-500" />
+                <span className="font-medium">180 Days</span>
+              </div>
+              <div className="flex items-center space-x-1 text-xs text-gray-600 bg-gray-50 px-3 py-2 rounded-full border border-gray-200">
+                <Truck className="h-3 w-3 text-green-500" />
+                <span className="font-medium">Free Ship</span>
               </div>
             </div>
           </div>
@@ -410,15 +424,15 @@ function HomePage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center space-x-6 mb-8">
+              <img 
+                src="/cavalo vetorizada.png" 
+                alt="BRUTE HORSE Logo" 
+                className="w-20 h-20 object-contain"
+              />
               <div className="text-left">
                 <h2 className="text-4xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">BRUTE HORSE</h2>
                 <p className="text-sm text-gray-400 font-medium tracking-wider">PREMIUM SUPPLEMENTS</p>
               </div>
-              <img 
-                src="/cavalo vetorizada.png" 
-                alt="BRUTE HORSE Logo" 
-                className="w-40 h-40 object-contain"
-              />
             </div>
             
             {/* Company Policies Links */}

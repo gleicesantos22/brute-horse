@@ -4,25 +4,28 @@ import { Shield, ArrowLeft } from 'lucide-react';
 const PrivacyPolicy: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
+      {/* Professional Header */}
       <div className="bg-white shadow-sm border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex items-center space-x-4">
-            <a href="/" className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors">
-              <ArrowLeft className="w-5 h-5 mr-2" />
-              Back to Home
-            </a>
-            <div className="flex items-center space-x-6">
+          <div className="flex justify-between items-center">
+            {/* Logo Section - Left Side */}
+            <div className="flex items-center space-x-4">
+              <img 
+                src="/cavalo vetorizada.png" 
+                alt="BRUTE HORSE Logo" 
+                className="w-12 h-12 object-contain"
+              />
               <div>
                 <h1 className="text-xl font-bold text-gray-900">BRUTE HORSE</h1>
                 <p className="text-xs text-gray-500">PREMIUM SUPPLEMENTS</p>
               </div>
-              <img 
-                src="/cavalo vetorizada.png" 
-                alt="BRUTE HORSE Logo" 
-                className="w-24 h-24 object-contain"
-              />
             </div>
+
+            {/* Back Button - Right Side */}
+            <a href="/" className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors">
+              <ArrowLeft className="w-5 h-5 mr-2" />
+              Back to Home
+            </a>
           </div>
         </div>
       </div>
