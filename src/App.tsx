@@ -197,7 +197,7 @@ function App() {
 
           {/* Fixed Product Cards Grid with proper spacing for badges */}
           <div className="pt-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 items-start">
               {productCards.map((card, index) => (
                 <ProductCard key={index} {...card} />
               ))}
@@ -322,71 +322,70 @@ function App() {
         </div>
       </div>
 
-      {/* Enhanced Professional Shipping Section */}
-      <section className="py-32 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
-          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
-        </div>
-
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 rounded-3xl p-16 text-white text-center relative overflow-hidden shadow-2xl">
+      {/* Redesigned Professional Shipping Section with Blue Theme */}
+      <section className="py-24 lg:py-32 relative overflow-hidden">
+        {/* Blue Background with Margins */}
+        <div className="mx-4 sm:mx-6 lg:mx-8 xl:mx-12 2xl:mx-16">
+          <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 rounded-3xl relative overflow-hidden shadow-2xl">
             
             {/* Enhanced Background Elements */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-transparent to-purple-600/10"></div>
-            <div className="absolute top-8 left-8 w-16 h-16 bg-gradient-to-br from-blue-500/20 to-transparent rounded-full"></div>
-            <div className="absolute bottom-8 right-8 w-20 h-20 bg-gradient-to-br from-purple-500/20 to-transparent rounded-full"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-full blur-3xl"></div>
-            
-            <div className="relative z-10">
-              {/* Enhanced Icon */}
-              <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl mb-12 shadow-2xl">
-                <Truck className="w-12 h-12 text-white" />
-              </div>
-              
-              {/* Enhanced Heading */}
-              <h3 className="text-6xl lg:text-7xl font-black mb-8 bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent leading-tight">
-                Free Shipping
-                <span className="block text-5xl lg:text-6xl bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                  Worldwide
-                </span>
-              </h3>
-              
-              {/* Enhanced Highlight */}
-              <div className="mb-8">
-                <p className="text-2xl lg:text-3xl text-gray-200 mb-4">
-                  With every order of{' '}
-                  <span className="font-black text-transparent bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-500 bg-clip-text">
-                    6 bottles
+            <div className="absolute inset-0">
+              <div className="absolute top-0 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+              <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-full blur-3xl"></div>
+            </div>
+
+            <div className="relative z-10 px-8 sm:px-12 lg:px-16 py-16 lg:py-20">
+              <div className="max-w-6xl mx-auto text-center text-white">
+                
+                {/* Enhanced Icon */}
+                <div className="inline-flex items-center justify-center w-24 h-24 bg-white/10 backdrop-blur-sm rounded-3xl mb-12 shadow-2xl border border-white/20">
+                  <Truck className="w-12 h-12 text-white" />
+                </div>
+                
+                {/* Enhanced Heading */}
+                <h3 className="text-6xl lg:text-7xl font-black mb-8 leading-tight">
+                  Free Shipping
+                  <span className="block text-5xl lg:text-6xl bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent">
+                    Worldwide
                   </span>
+                </h3>
+                
+                {/* Enhanced Highlight */}
+                <div className="mb-12">
+                  <p className="text-2xl lg:text-3xl text-blue-100 mb-6">
+                    With every order of{' '}
+                    <span className="font-black text-transparent bg-gradient-to-r from-yellow-300 via-yellow-400 to-orange-400 bg-clip-text">
+                      6 bottles
+                    </span>
+                  </p>
+                  <div className="inline-block bg-green-500/20 backdrop-blur-sm px-8 py-4 rounded-2xl border border-green-400/30">
+                    <p className="text-xl text-green-200 font-semibold">Save $50+ on shipping costs</p>
+                  </div>
+                </div>
+                
+                {/* Enhanced Supporting Text */}
+                <p className="text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed mb-16">
+                  92% of our customers choose the 6-bottle package - our recommended option for optimal results, maximum savings, and the complete transformation experience
                 </p>
-                <div className="inline-block bg-gradient-to-r from-green-500/20 to-emerald-500/20 px-6 py-3 rounded-full border border-green-500/30">
-                  <p className="text-lg text-green-300 font-semibold">Save $50+ on shipping costs</p>
-                </div>
-              </div>
-              
-              {/* Enhanced Supporting Text */}
-              <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-12">
-                92% of our customers choose the 6-bottle package - our recommended option for optimal results, maximum savings, and the complete transformation experience
-              </p>
-              
-              {/* Enhanced Trust Indicators */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="flex flex-col items-center space-y-3 p-6 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/10">
-                  <CheckCircle className="w-8 h-8 text-green-400" />
-                  <h4 className="font-bold text-white">Fast Processing</h4>
-                  <p className="text-sm text-gray-400 text-center">Orders shipped within 24-48 hours</p>
-                </div>
-                <div className="flex flex-col items-center space-y-3 p-6 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/10">
-                  <Shield className="w-8 h-8 text-blue-400" />
-                  <h4 className="font-bold text-white">Secure Packaging</h4>
-                  <p className="text-sm text-gray-400 text-center">Discreet, protective shipping materials</p>
-                </div>
-                <div className="flex flex-col items-center space-y-3 p-6 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/10">
-                  <Star className="w-8 h-8 text-yellow-400" />
-                  <h4 className="font-bold text-white">Premium Service</h4>
-                  <p className="text-sm text-gray-400 text-center">White-glove customer experience</p>
+                
+                {/* Enhanced Trust Indicators */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="flex flex-col items-center space-y-4 p-8 bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 hover:bg-white/10 transition-all duration-300">
+                    <CheckCircle className="w-10 h-10 text-green-300" />
+                    <h4 className="font-bold text-white text-lg">Fast Processing</h4>
+                    <p className="text-blue-200 text-center leading-relaxed">Orders shipped within 24-48 hours</p>
+                  </div>
+                  <div className="flex flex-col items-center space-y-4 p-8 bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 hover:bg-white/10 transition-all duration-300">
+                    <Shield className="w-10 h-10 text-blue-300" />
+                    <h4 className="font-bold text-white text-lg">Secure Packaging</h4>
+                    <p className="text-blue-200 text-center leading-relaxed">Discreet, protective shipping materials</p>
+                  </div>
+                  <div className="flex flex-col items-center space-y-4 p-8 bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 hover:bg-white/10 transition-all duration-300">
+                    <Star className="w-10 h-10 text-yellow-300" />
+                    <h4 className="font-bold text-white text-lg">Premium Service</h4>
+                    <p className="text-blue-200 text-center leading-relaxed">White-glove customer experience</p>
+                  </div>
                 </div>
               </div>
             </div>

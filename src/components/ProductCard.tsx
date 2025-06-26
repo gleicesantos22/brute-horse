@@ -61,7 +61,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
     gray: 'border-gray-200 hover:border-gray-300 shadow-lg hover:shadow-xl bg-gradient-to-br from-gray-50/50 to-slate-50/50'
   };
 
-  // Enhanced hover effects with different intensities
   const getHoverEffects = () => {
     switch (borderColor) {
       case 'yellow':
@@ -75,7 +74,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
     }
   };
 
-  // Special styling for BEST VALUE card
   const getCardBackground = () => {
     if (borderColor === 'yellow') {
       return 'bg-gradient-to-br from-white via-yellow-50/30 to-orange-50/30';
@@ -93,8 +91,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
         </div>
       </div>
 
-      {/* Main Card */}
-      <div className={`relative ${getCardBackground()} rounded-3xl p-8 border-3 transition-all duration-500 ${getHoverEffects()} ${borderColors[borderColor]} group h-full flex flex-col overflow-hidden pt-12`}>
+      {/* Main Card with Fixed Structure */}
+      <div className={`relative ${getCardBackground()} rounded-3xl p-8 border-3 transition-all duration-500 ${getHoverEffects()} ${borderColors[borderColor]} group overflow-hidden pt-12`} style={{ minHeight: '700px' }}>
         
         {/* Enhanced Background Elements for BEST VALUE */}
         {borderColor === 'yellow' && (
@@ -104,71 +102,74 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </>
         )}
 
-        {/* Enhanced Header */}
-        <div className="text-center mb-8">
-          <h3 className="text-3xl font-bold text-gray-900 mb-3">{title}</h3>
-          <p className="text-gray-600 text-base font-medium">{subtitle}</p>
-          {borderColor === 'yellow' && (
-            <div className="mt-3 inline-flex items-center space-x-1 bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-semibold">
-              <Star className="w-3 h-3" />
-              <span>Most Popular Choice</span>
-            </div>
-          )}
-        </div>
-
-        {/* Enhanced Product Image */}
-        <div className="flex justify-center mb-8 flex-grow">
-          <div className="relative group/image flex items-center justify-center h-56">
-            <div className={`absolute inset-0 ${borderColor === 'yellow' ? 'bg-gradient-to-t from-yellow-100/30 to-transparent' : 'bg-gradient-to-t from-gray-100/20 to-transparent'} rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
-            <img 
-              src={image} 
-              alt={`${title} Product`} 
-              className="relative max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-110 drop-shadow-lg"
-            />
+        {/* Card Content with Fixed Layout */}
+        <div className="flex flex-col h-full">
+          {/* Header Section - Fixed Height */}
+          <div className="text-center mb-6" style={{ minHeight: '120px' }}>
+            <h3 className="text-3xl font-bold text-gray-900 mb-3">{title}</h3>
+            <p className="text-gray-600 text-base font-medium">{subtitle}</p>
             {borderColor === 'yellow' && (
-              <div className="absolute inset-0 bg-gradient-to-t from-yellow-500/10 via-transparent to-orange-500/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="mt-3 inline-flex items-center space-x-1 bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs font-semibold">
+                <Star className="w-3 h-3" />
+                <span>Most Popular Choice</span>
+              </div>
             )}
           </div>
-        </div>
 
-        {/* Enhanced Pricing Section */}
-        <div className="text-center mb-8">
-          <div className="flex items-baseline justify-center mb-4">
-            <span className="text-5xl font-black text-blue-600">{price}</span>
-            <span className="text-lg text-gray-500 ml-2 font-medium">per bottle</span>
+          {/* Product Image Section - Fixed Height */}
+          <div className="flex justify-center mb-6" style={{ height: '200px' }}>
+            <div className="relative group/image flex items-center justify-center w-full h-full">
+              <div className={`absolute inset-0 ${borderColor === 'yellow' ? 'bg-gradient-to-t from-yellow-100/30 to-transparent' : 'bg-gradient-to-t from-gray-100/20 to-transparent'} rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+              <img 
+                src={image} 
+                alt={`${title} Product`} 
+                className="relative max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-110 drop-shadow-lg"
+              />
+              {borderColor === 'yellow' && (
+                <div className="absolute inset-0 bg-gradient-to-t from-yellow-500/10 via-transparent to-orange-500/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              )}
+            </div>
           </div>
-          
-          <div className="space-y-3">
-            <div className={`${borderColor === 'yellow' ? 'bg-gradient-to-r from-green-500 to-emerald-600' : 'bg-green-500'} text-white px-4 py-3 rounded-xl font-bold text-base shadow-lg`}>
-              {savings}
+
+          {/* Pricing Section - Fixed Height */}
+          <div className="text-center mb-6" style={{ minHeight: '180px' }}>
+            <div className="flex items-baseline justify-center mb-4">
+              <span className="text-5xl font-black text-blue-600">{price}</span>
+              <span className="text-lg text-gray-500 ml-2 font-medium">per bottle</span>
             </div>
             
-            <div className="space-y-2">
-              {features.map((feature, index) => (
-                <div key={index} className="flex items-center justify-center space-x-2 text-sm text-gray-700">
-                  <CheckCircle className="w-4 h-4 text-green-500" />
-                  <span className="font-medium">{feature}</span>
-                </div>
-              ))}
+            <div className="space-y-3">
+              <div className={`${borderColor === 'yellow' ? 'bg-gradient-to-r from-green-500 to-emerald-600' : 'bg-green-500'} text-white px-4 py-3 rounded-xl font-bold text-base shadow-lg`}>
+                {savings}
+              </div>
+              
+              <div className="space-y-2">
+                {features.map((feature, index) => (
+                  <div key={index} className="flex items-center justify-center space-x-2 text-sm text-gray-700">
+                    <CheckCircle className="w-4 h-4 text-green-500" />
+                    <span className="font-medium">{feature}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Enhanced CTA Button */}
-        <div className="mt-auto">
-          <a 
-            href={link}
-            className={`block w-full ${buttonStyles[buttonStyle]} text-lg transition-all duration-300 mb-6 group/button text-center no-underline`}
-          >
-            <span className="flex items-center justify-center space-x-3">
-              <Shield className="w-5 h-5" />
-              <span>{buttonText}</span>
-              <ArrowRight className="w-5 h-5 transition-transform group-hover/button:translate-x-2" />
-            </span>
-          </a>
+          {/* CTA Button Section - Fixed Height */}
+          <div className="mb-6" style={{ minHeight: '60px' }}>
+            <a 
+              href={link}
+              className={`block w-full ${buttonStyles[buttonStyle]} text-lg transition-all duration-300 group/button text-center no-underline`}
+            >
+              <span className="flex items-center justify-center space-x-3">
+                <Shield className="w-5 h-5" />
+                <span>{buttonText}</span>
+                <ArrowRight className="w-5 h-5 transition-transform group-hover/button:translate-x-2" />
+              </span>
+            </a>
+          </div>
 
-          {/* Enhanced Payment Info */}
-          <div className="text-center">
+          {/* Payment Info Section - Fixed Height */}
+          <div className="text-center mt-auto" style={{ minHeight: '160px' }}>
             <div className="flex justify-center mb-4">
               <div className="bg-white p-3 rounded-xl shadow-md border border-gray-100">
                 <img 
