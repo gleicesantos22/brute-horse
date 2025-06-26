@@ -12,16 +12,16 @@ const ContactUs: React.FC = () => {
               <ArrowLeft className="w-5 h-5 mr-2" />
               Back to Home
             </a>
-            <div className="flex items-center space-x-3">
-              <img 
-                src="/cavalo vetorizada.png" 
-                alt="BRUTE HORSE Logo" 
-                className="w-12 h-12 object-contain"
-              />
+            <div className="flex items-center space-x-6">
               <div>
                 <h1 className="text-xl font-bold text-gray-900">BRUTE HORSE</h1>
                 <p className="text-xs text-gray-500">PREMIUM SUPPLEMENTS</p>
               </div>
+              <img 
+                src="/cavalo vetorizada.png" 
+                alt="BRUTE HORSE Logo" 
+                className="w-24 h-24 object-contain"
+              />
             </div>
           </div>
         </div>
