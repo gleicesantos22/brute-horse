@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, Truck, Award, CheckCircle, Star, CreditCard, Clock, Users, TrendingUp, Zap } from 'lucide-react';
+import { Shield, Truck, Award, CheckCircle, Star, Clock, Users, TrendingUp, Zap } from 'lucide-react';
 import ProductCard from './components/ProductCard';
 
 function App() {
@@ -195,20 +195,12 @@ function App() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 items-stretch">
-            {productCards.map((card, index) => (
-              <ProductCard key={index} {...card} />
-            ))}
-          </div>
-
-          {/* Additional Trust Elements */}
-          <div className="mt-16 text-center">
-            <div className="inline-flex items-center space-x-4 bg-white px-8 py-4 rounded-2xl shadow-lg border border-gray-100">
-              <Shield className="w-6 h-6 text-green-500" />
-              <span className="text-lg font-semibold text-gray-900">Secure 256-bit SSL Encryption</span>
-              <div className="w-px h-6 bg-gray-300"></div>
-              <CreditCard className="w-6 h-6 text-blue-500" />
-              <span className="text-lg font-semibold text-gray-900">All Major Cards Accepted</span>
+          {/* Fixed Product Cards Grid with proper spacing for badges */}
+          <div className="pt-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 items-stretch">
+              {productCards.map((card, index) => (
+                <ProductCard key={index} {...card} />
+              ))}
             </div>
           </div>
         </div>
