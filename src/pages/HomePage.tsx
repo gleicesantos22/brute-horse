@@ -65,8 +65,12 @@ function HomePage() {
           <div className="flex justify-between items-center h-20">
             <div className="flex-shrink-0">
               <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-lg">BH</span>
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl flex items-center justify-center shadow-lg p-2">
+                  <img 
+                    src="/cavalo vetorizada.png" 
+                    alt="BRUTE HORSE Logo" 
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <div>
                   <h1 className="text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">BRUTE HORSE</h1>
@@ -408,8 +412,12 @@ function HomePage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center space-x-4 mb-8">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl flex items-center justify-center shadow-2xl">
-                <span className="text-white font-bold text-2xl">BH</span>
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl flex items-center justify-center shadow-2xl p-3">
+                <img 
+                  src="/cavalo vetorizada.png" 
+                  alt="BRUTE HORSE Logo" 
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div className="text-left">
                 <h2 className="text-4xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">BRUTE HORSE</h2>
