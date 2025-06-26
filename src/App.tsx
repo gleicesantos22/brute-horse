@@ -297,16 +297,6 @@ function App() {
             </p>
           </div>
           
-          <div className="border-t border-gray-800 pt-8">
-            <div className="flex flex-wrap justify-center gap-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Terms & Conditions</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Disclaimer</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Contact Us</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Refund Policy</a>
-            </div>
-          </div>
-          
           <div className="text-center mt-8 text-xs text-gray-500">
             <p>2045 S Carpenter St, United States. All rights reserved. Review legal terms and privacy policy here. Contact us here.</p>
           </div>
