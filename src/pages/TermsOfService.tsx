@@ -13,13 +13,11 @@ const TermsOfService: React.FC = () => {
               Back to Home
             </a>
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center p-2">
-                <img 
-                  src="/cavalo vetorizada.png" 
-                  alt="BRUTE HORSE Logo" 
-                  className="w-full h-full object-contain"
-                />
-              </div>
+              <img 
+                src="/cavalo vetorizada.png" 
+                alt="BRUTE HORSE Logo" 
+                className="w-12 h-12 object-contain"
+              />
               <div>
                 <h1 className="text-xl font-bold text-gray-900">BRUTE HORSE</h1>
                 <p className="text-xs text-gray-500">PREMIUM SUPPLEMENTS</p>
