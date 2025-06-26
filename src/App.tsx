@@ -66,9 +66,9 @@ function App() {
             <div className="flex-shrink-0">
               <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">B</span>
+                  <span className="text-white font-bold text-sm">BH</span>
                 </div>
-                <h1 className="text-xl font-bold text-gray-900">Bluedrops</h1>
+                <h1 className="text-xl font-bold text-gray-900">BRUTE HORSE</h1>
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-8">
@@ -100,7 +100,7 @@ function App() {
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
               Secure Your
               <span className="block bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
-                Bluedrops
+                BRUTE HORSE
               </span>
               <span className="block text-4xl md:text-5xl text-gray-700">
                 Discount Pack
@@ -150,7 +150,7 @@ function App() {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-100 via-transparent to-blue-100 rounded-full blur-3xl opacity-30"></div>
               <img 
                 src="https://i.postimg.cc/zH3WNjBw/6BOTTLE.png" 
-                alt="Bluedrops Products" 
+                alt="BRUTE HORSE Products" 
                 className="relative w-full max-w-2xl mx-auto transition-transform duration-700 hover:scale-105"
               />
             </div>
@@ -195,7 +195,7 @@ function App() {
                   <h3 className="text-6xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent mb-6">180 Days</h3>
                 </div>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  Your order today is protected by our iron-clad 180-day 100% money-back guarantee. If you're not amazed by how well Bluedrops enhances your vitality and performance, just let us know within 180 days and we'll refund every penny. No questions asked.
+                  Your order today is protected by our iron-clad 180-day 100% money-back guarantee. If you're not amazed by how well BRUTE HORSE enhances your vitality and performance, just let us know within 180 days and we'll refund every penny. No questions asked.
                 </p>
                 <div className="flex flex-wrap gap-4 pt-4">
                   <div className="flex items-center space-x-2 text-green-400">
@@ -287,11 +287,11 @@ function App() {
           <div className="text-center mb-8">
             <div className="flex items-center justify-center space-x-2 mb-4">
               <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">B</span>
+                <span className="text-white font-bold text-sm">BH</span>
               </div>
-              <h2 className="text-2xl font-bold text-white">Bluedrops</h2>
+              <h2 className="text-2xl font-bold text-white">BRUTE HORSE</h2>
             </div>
-            <p className="text-gray-400 mb-4">Copyright © 2024 | Bluedrops All Rights Reserved</p>
+            <p className="text-gray-400 mb-4">Copyright © 2024 | BRUTE HORSE All Rights Reserved</p>
             <p className="text-sm text-gray-500 max-w-4xl mx-auto leading-relaxed mb-6">
               These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.
             </p>
