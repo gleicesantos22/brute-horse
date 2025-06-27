@@ -16,27 +16,11 @@ import Websitelogo from "../components/logo";
 function HomePage() {
   const productCards = [
     {
-      badge: { text: "BEST VALUE", color: "yellow" as const },
-      title: "6 Bottles",
-      subtitle: "180 days supply",
-      image: "https://i.postimg.cc/zH3WNjBw/6BOTTLE.png",
-      price: "$49",
-      savings: "YOU SAVE $600",
-      features: ["Biggest Discount", "180 Days Guarantee"],
-      buttonText: "Secure Order",
-      buttonStyle: "primary" as const,
-      originalPrice: "$594",
-      finalPrice: "$294",
-      shipping: "+ FREE SHIPPING",
-      shippingColor: "green" as const,
-      link: "https://pagamento.paybluedrops.com/checkout/176849703:1",
-      borderColor: "yellow" as const,
-    },
-    {
       badge: { text: "POPULAR", color: "blue" as const },
       title: "3 Bottles",
       subtitle: "90 days supply",
-      image: "https://i.imgur.com/gTcOoJ7.png",
+      // image: "https://i.imgur.com/gTcOoJ7.png",
+      image: "/images/3.png",
       price: "$69",
       savings: "YOU SAVE $300",
       features: ["180 Days Guarantee"],
@@ -50,10 +34,29 @@ function HomePage() {
       borderColor: "blue" as const,
     },
     {
+      badge: { text: "BEST VALUE", color: "yellow" as const },
+      title: "6 Bottles",
+      subtitle: "180 days supply",
+      // image: "https://i.postimg.cc/zH3WNjBw/6BOTTLE.png",
+      image: "/images/6.png",
+      price: "$49",
+      savings: "YOU SAVE $600",
+      features: ["Biggest Discount", "180 Days Guarantee"],
+      buttonText: "Secure Order",
+      buttonStyle: "primary" as const,
+      originalPrice: "$594",
+      finalPrice: "$294",
+      shipping: "+ FREE SHIPPING",
+      shippingColor: "green" as const,
+      link: "https://pagamento.paybluedrops.com/checkout/176849703:1",
+      borderColor: "yellow" as const,
+    },
+    {
       badge: { text: "STARTER", color: "gray" as const },
       title: "1 Bottle",
       subtitle: "30 days supply",
-      image: "https://i.imgur.com/ojDbZ0n.png",
+      // image: "https://i.imgur.com/ojDbZ0n.png",
+      image: "/images/1.png",
       price: "$79",
       savings: "YOU SAVE $240",
       features: ["180 Days Guarantee"],
@@ -78,7 +81,7 @@ function HomePage() {
             <Websitelogo />
 
             {/* Trust Badges - Right Side */}
-            <div className="hidden lg:flex items-center space-x-6">
+            {/* <div className="hidden lg:flex items-center space-x-6">
               <div className="flex items-center space-x-2 text-sm text-gray-600 bg-gray-50 px-4 py-2 rounded-full border border-gray-200">
                 <Shield className="h-4 w-4 text-blue-500" />
                 <span className="font-medium">180 Days Guarantee</span>
@@ -91,10 +94,10 @@ function HomePage() {
                 <Award className="h-4 w-4 text-purple-500" />
                 <span className="font-medium">FDA Approved</span>
               </div>
-            </div>
+            </div> */}
 
             {/* Mobile Trust Badges */}
-            <div className="lg:hidden flex items-center space-x-3">
+            {/* <div className="lg:hidden flex items-center space-x-3">
               <div className="flex items-center space-x-1 text-xs text-gray-600 bg-gray-50 px-3 py-2 rounded-full border border-gray-200">
                 <Shield className="h-3 w-3 text-blue-500" />
                 <span className="font-medium">180 Days</span>
@@ -103,7 +106,7 @@ function HomePage() {
                 <Truck className="h-3 w-3 text-green-500" />
                 <span className="font-medium">Free Ship</span>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </nav>
@@ -138,12 +141,28 @@ function HomePage() {
             </h1>
 
             {/* Enhanced Subtitle */}
-            <p className="text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
+            <p className="text-2xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed font-light">
               Premium supplement engineered to maximize your{" "}
               <span className="font-semibold text-gray-800">vitality</span> and{" "}
               <span className="font-semibold text-gray-800">performance</span>{" "}
               with scientifically-backed natural ingredients
             </p>
+
+            {/* Trust Badges*/}
+            <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mb-6">
+              <div className="flex items-center space-x-2 text-sm text-gray-600 bg-gray-50 px-4 py-2 rounded-full border border-gray-200">
+                <Shield className="h-4 w-4 text-blue-500" />
+                <span className="font-medium">180 Days Guarantee</span>
+              </div>
+              <div className="flex items-center space-x-2 text-sm text-gray-600 bg-gray-50 px-4 py-2 rounded-full border border-gray-200">
+                <Truck className="h-4 w-4 text-green-500" />
+                <span className="font-medium">Free Worldwide Shipping</span>
+              </div>
+              <div className="flex items-center space-x-2 text-sm text-gray-600 bg-gray-50 px-4 py-2 rounded-full border border-gray-200">
+                <Award className="h-4 w-4 text-purple-500" />
+                <span className="font-medium">FDA Approved</span>
+              </div>
+            </div>
 
             {/* Enhanced Trust Badges */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16">
@@ -250,7 +269,7 @@ function HomePage() {
       </section>
 
       {/* Enhanced Product Showcase Section */}
-      <div className="py-32 bg-white relative overflow-hidden">
+      <div className="py-20 bg-white relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-0 w-96 h-96 bg-gradient-to-r from-blue-100/30 to-transparent rounded-full blur-3xl"></div>
@@ -264,10 +283,14 @@ function HomePage() {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-100 via-transparent to-blue-100 rounded-full blur-3xl opacity-40 scale-110"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-100/50 to-transparent rounded-3xl"></div>
+                <h1 className="text-6xl md:text-8xl font-black  mb-8 leading-tight tracking-tight">
+                  Best Offer
+                </h1>
                 <img
-                  src="https://i.postimg.cc/zH3WNjBw/6BOTTLE.png"
+                  // src="https://i.postimg.cc/zH3WNjBw/6BOTTLE.png"
+                  src="/images/banner.png"
                   alt="BRUTE HORSE Products"
-                  className="relative w-full max-w-3xl mx-auto transition-all duration-700 hover:scale-105 drop-shadow-2xl"
+                  className="object-cover relative w-full max-w-3xl mx-auto transition-all duration-700 hover:scale-105 drop-shadow-2xl"
                 />
               </div>
             </div>
@@ -487,11 +510,11 @@ function HomePage() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="flex items-center justify-center space-x-6 mb-8">
+            <div className="flex items-center justify-center space-x-2 mb-8">
               <img
                 src="/cavalo vetorizada.png"
                 alt="BRUTE HORSE Logo"
-                className="w-20 h-20 object-contain"
+                className="w-16 h-16 object-cover"
               />
               <div className="text-left">
                 <h2 className="text-4xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">

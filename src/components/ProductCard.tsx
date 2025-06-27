@@ -92,7 +92,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       </div>
 
       {/* Main Card with Fixed Structure */}
-      <div className={`relative ${getCardBackground()} rounded-3xl p-8 border-3 transition-all duration-500 ${getHoverEffects()} ${borderColors[borderColor]} group overflow-hidden pt-12`} style={{ minHeight: '700px' }}>
+      <div className={`relative border-2 cursor-pointer ${getCardBackground()} rounded-3xl p-8 border-3 transition-all duration-500 ${getHoverEffects()} ${borderColors[borderColor]} group overflow-hidden pt-12`} style={{ minHeight: '700px' }}>
         
         {/* Enhanced Background Elements for BEST VALUE */}
         {borderColor === 'yellow' && (
@@ -134,7 +134,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           {/* Pricing Section - Fixed Height */}
           <div className="text-center mb-6" style={{ minHeight: '180px' }}>
             <div className="flex items-baseline justify-center mb-4">
-              <span className="text-5xl font-black text-blue-600">{price}</span>
+              <span className="bordertext-5xl font-black text-blue-600">{price}</span>
               <span className="text-lg text-gray-500 ml-2 font-medium">per bottle</span>
             </div>
             
@@ -145,7 +145,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
               
               <div className="space-y-2">
                 {features.map((feature, index) => (
-                  <div key={index} className="flex items-center justify-center space-x-2 text-sm text-gray-700">
+                  <div key={index} className="flex items-center justify-start space-x-2 text-md text-gray-700">
                     <CheckCircle className="w-4 h-4 text-green-500" />
                     <span className="font-medium">{feature}</span>
                   </div>
