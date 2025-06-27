@@ -349,11 +349,16 @@ function HomePage() {
                     <path d="m12 5 7 7-7 7"></path>
                   </svg>
                 </a>
-
-                <div className="text-center text-gray-500">
-                  <p className="text-sm font-medium">✓ Instant Access</p>
-                  <p className="text-sm font-medium">✓ 180-Day Guarantee</p>
-                </div>
+              </div>
+              <div className="text-center text-gray-500">
+                <p className="text-sm font-medium flex items-center justify-center gap-2 mb-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  Instant Access
+                </p>
+                <p className="text-sm font-medium flex items-center justify-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  180-Day Guarantee
+                </p>
               </div>
             </div>
           </div>
