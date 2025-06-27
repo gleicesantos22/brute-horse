@@ -12,27 +12,10 @@ import {
 } from "lucide-react";
 import ProductCard from "../components/ProductCard";
 import Websitelogo from "../components/logo";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   const productCards = [
-    {
-      badge: { text: "POPULAR", color: "blue" as const },
-      title: "3 Bottles",
-      subtitle: "90 days supply",
-      // image: "https://i.imgur.com/gTcOoJ7.png",
-      image: "/images/3.png",
-      price: "$69",
-      savings: "YOU SAVE $300",
-      features: ["180 Days Guarantee"],
-      buttonText: "Secure Order",
-      buttonStyle: "secondary" as const,
-      originalPrice: "$300",
-      finalPrice: "$207",
-      shipping: "+ FREE SHIPPING",
-      shippingColor: "green" as const,
-      link: "https://pagamento.paybluedrops.com/checkout/176845818:1",
-      borderColor: "blue" as const,
-    },
     {
       badge: { text: "BEST VALUE", color: "yellow" as const },
       title: "6 Bottles",
@@ -48,8 +31,26 @@ function HomePage() {
       finalPrice: "$294",
       shipping: "+ FREE SHIPPING",
       shippingColor: "green" as const,
-      link: "https://pagamento.paybluedrops.com/checkout/176849703:1",
+      link: "https://lucas-digitalbr.mycartpanda.com/checkout/188274365:1",
       borderColor: "yellow" as const,
+    },
+    {
+      badge: { text: "POPULAR", color: "blue" as const },
+      title: "3 Bottles",
+      subtitle: "90 days supply",
+      // image: "https://i.imgur.com/gTcOoJ7.png",
+      image: "/images/3.png",
+      price: "$69",
+      savings: "YOU SAVE $300",
+      features: ["180 Days Guarantee"],
+      buttonText: "Secure Order",
+      buttonStyle: "secondary" as const,
+      originalPrice: "$300",
+      finalPrice: "$207",
+      shipping: "+ FREE SHIPPING",
+      shippingColor: "green" as const,
+      link: "https://lucas-digitalbr.mycartpanda.com/checkout/188274332:1",
+      borderColor: "blue" as const,
     },
     {
       badge: { text: "STARTER", color: "gray" as const },
@@ -66,7 +67,7 @@ function HomePage() {
       finalPrice: "$79",
       shipping: "+ $9.95 SHIPPING",
       shippingColor: "blue" as const,
-      link: "https://pagamento.paybluedrops.com/checkout/176654642:1",
+      link: "https://lucas-digitalbr.mycartpanda.com/checkout/188271611:1",
       borderColor: "gray" as const,
     },
   ];
@@ -112,7 +113,7 @@ function HomePage() {
       </nav>
 
       {/* Enhanced Hero Section */}
-      <div className="relative pt-24 pb-32 overflow-hidden">
+      <div className="relative pt-20 pb-24 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-50/50 to-transparent"></div>
@@ -209,7 +210,7 @@ function HomePage() {
 
             {/* Social Proof Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 justify-center gap-4 md:gap-6 lg:gap-8 text-center">
-              <div className="border flex gap-2 items-center p-4 px-8 bg-white rounded-full shadow-sm hover:shadow-md transition-shadow">
+              <div className="border border-blue-200 flex gap-2 items-center p-4 px-8 bg-white rounded-full shadow-sm hover:shadow-md transition-shadow">
                 <Users className="w-8 h-8 text-blue-600" />
                 <div>
                   <p className="text-left text-2xl font-bold text-gray-800">
@@ -220,7 +221,7 @@ function HomePage() {
                   </p>
                 </div>
               </div>
-              <div className="border flex gap-2 items-center p-4 px-8 bg-white rounded-full shadow-sm hover:shadow-md transition-shadow">
+              <div className="border border-yellow-200 flex gap-2 items-center p-4 px-8 bg-white rounded-full shadow-sm hover:shadow-md transition-shadow">
                 <Star className="w-8 h-8 text-yellow-500" />
                 <div>
                   <p className="text-left text-2xl font-bold text-gray-800">
@@ -231,7 +232,7 @@ function HomePage() {
                   </p>
                 </div>
               </div>
-              <div className="border flex gap-2 items-center p-4 px-8 bg-white rounded-full shadow-sm hover:shadow-md transition-shadow">
+              <div className="border border-green-200 flex gap-2 items-center p-4 px-8 bg-white rounded-full shadow-sm hover:shadow-md transition-shadow">
                 <TrendingUp className="w-8 h-8 text-green-600" />
                 <div>
                   <p className="text-left text-2xl font-bold text-gray-800">
@@ -248,7 +249,7 @@ function HomePage() {
       </div>
 
       {/* Enhanced Offers Section */}
-      <section className="py-24 lg:py-32 bg-gradient-to-br from-gray-50 to-white relative">
+      <section className="py-12 lg:py-20 bg-gradient-to-br from-gray-50 to-white relative">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div
@@ -471,11 +472,17 @@ function HomePage() {
                     6 bottles
                   </span>
                 </p>
-                <div className="inline-block bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-2xl shadow-lg">
-                  <p className="text-xl font-semibold">
-                    Save $50+ on shipping costs
-                  </p>
-                </div>
+                <Link
+                  to={
+                    "https://lucas-digitalbr.mycartpanda.com/checkout/188274365:1"
+                  }
+                >
+                  <div className="inline-block bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-2xl shadow-lg">
+                    <p className="text-xl font-semibold">
+                      Save $50+ on shipping costs
+                    </p>
+                  </div>
+                </Link>
               </div>
 
               {/* Enhanced Supporting Text */}
