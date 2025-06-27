@@ -208,24 +208,39 @@ function HomePage() {
             </div>
 
             {/* Social Proof Stats */}
-            <div className="flex flex-wrap justify-center gap-8 text-center mb-8">
-              <div className="flex items-center space-x-2">
-                <Users className="w-5 h-5 text-blue-600" />
-                <span className="text-sm font-medium text-gray-700">
-                  50,000+ Satisfied Customers
-                </span>
+            <div className="grid grid-cols-1 md:grid-cols-3 justify-center gap-4 md:gap-6 lg:gap-8 text-center">
+              <div className="border flex gap-2 items-center p-4 px-8 bg-white rounded-full shadow-sm hover:shadow-md transition-shadow">
+                <Users className="w-8 h-8 text-blue-600" />
+                <div>
+                  <p className="text-left text-2xl font-bold text-gray-800">
+                    50,000+
+                  </p>
+                  <p className="text-left text-sm font-medium text-gray-600">
+                    Satisfied Customers
+                  </p>
+                </div>
               </div>
-              <div className="flex items-center space-x-2">
-                <Star className="w-5 h-5 text-yellow-500" />
-                <span className="text-sm font-medium text-gray-700">
-                  4.9/5 Average Rating
-                </span>
+              <div className="border flex gap-2 items-center p-4 px-8 bg-white rounded-full shadow-sm hover:shadow-md transition-shadow">
+                <Star className="w-8 h-8 text-yellow-500" />
+                <div>
+                  <p className="text-left text-2xl font-bold text-gray-800">
+                    4.9/5
+                  </p>
+                  <p className="text-left text-sm font-medium text-gray-600">
+                    Average Rating
+                  </p>
+                </div>
               </div>
-              <div className="flex items-center space-x-2">
-                <TrendingUp className="w-5 h-5 text-green-600" />
-                <span className="text-sm font-medium text-gray-700">
-                  92% Reorder Rate
-                </span>
+              <div className="border flex gap-2 items-center p-4 px-8 bg-white rounded-full shadow-sm hover:shadow-md transition-shadow">
+                <TrendingUp className="w-8 h-8 text-green-600" />
+                <div>
+                  <p className="text-left text-2xl font-bold text-gray-800">
+                    92%
+                  </p>
+                  <p className="text-left text-sm font-medium text-gray-600">
+                    Reorder Rate
+                  </p>
+                </div>
               </div>
             </div>
           </div>
