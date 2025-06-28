@@ -166,7 +166,7 @@ function HomePage() {
             </div>
 
             {/* Enhanced Trust Badges */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto my-16">
               <div className="flex flex-col items-center space-y-3 p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
                 <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
                   <CheckCircle className="w-6 h-6 text-green-600" />
@@ -209,7 +209,7 @@ function HomePage() {
             </div>
 
             {/* Social Proof Stats */}
-            <div className="grid grid-cols-1 md:grid-cols-3 justify-center gap-4 md:gap-6 lg:gap-8 text-center">
+            {/* <div className="grid grid-cols-1 md:grid-cols-3 justify-center gap-4 md:gap-6 lg:gap-8 text-center">
               <div className="border border-blue-200 flex gap-2 items-center p-4 px-8 bg-white rounded-full shadow-sm hover:shadow-md transition-shadow">
                 <Users className="w-8 h-8 text-blue-600" />
                 <div>
@@ -243,7 +243,7 @@ function HomePage() {
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
