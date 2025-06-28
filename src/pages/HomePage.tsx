@@ -76,7 +76,7 @@ function HomePage() {
     <div className="min-h-screen bg-white">
       {/* Professional Header */}
       <nav className="bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8 border">
           <div className="flex justify-between items-center h-20">
             {/* Logo Section - Left Side */}
             <Websitelogo />
