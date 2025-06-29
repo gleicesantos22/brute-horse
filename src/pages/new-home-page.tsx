@@ -241,7 +241,7 @@ const NewHomePage = () => {
       <div className="max-w-7xl mx-auto px-4 py-8 border">
         <div>
           <h2 className="text-2xl font-bold text-center mb-6">
-            Claim Your Discounted BeastForce
+            Claim Your Discounted Brute Horse
             <br />
             Now While Supplies Last!
           </h2>
@@ -251,6 +251,71 @@ const NewHomePage = () => {
           {productCards.map((card, index) => (
             <NewProductCard key={index} {...card} />
           ))}
+        </div>
+      </div>
+      {/* Satisfaction gaurantee */}
+      <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
+        <div className="flex flex-col md:flex-row gap-4 items-center p-8 md:p-10 ">
+          <img
+            src="/images/money-back-guarantee.webp"
+            className="h-[200px] w-[200px] md:h-[300px] md:w-[300px] object-contain"
+            alt="registered"
+          />
+
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 leading-tight">
+              We're so confident Brute Horse will reignite your vitality, we
+              back it with a{" "}
+              <span className="text-blue-600">100% satisfaction guarantee</span>{" "}
+              for 60 days.
+            </h2>
+            <div className="space-y-4 text-gray-700 text-base md:text-lg">
+              <p>
+                Start using Brute Horse as soon as it arrives, and within days
+                you might notice enhanced energy, improved stamina, and a
+                stronger sense of confidence. Over time, as your body adjusts to
+                the natural formula, you could experience firmer, more
+                consistent performance and a renewed sense of intimacy in your
+                relationships.
+              </p>
+
+              <p>
+                This is your opportunity to track your transformation—whether
+                it's regaining the energy for date nights, feeling revitalized
+                during your workouts, or simply rediscovering the confidence you
+                thought was gone.
+              </p>
+
+              <p className="font-medium">
+                If after several weeks or even months you're not completely
+                satisfied with your results, we'll refund your money in full—no
+                questions asked. With Brute Horse, you're not just taking
+                control of your vitality—you're taking control of your life.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                <img
+                  src="/images/gmp-certified.webp"
+                  className="h-full w-full object-contain"
+                  alt="gmp-certified"
+                />
+                <img
+                  src="/images/natural-formula.webp"
+                  className="h-full w-full object-contain"
+                  alt="natural-formula"
+                />
+                <img
+                  src="/images/made-in-usa.webp"
+                  className="h-full w-full object-contain"
+                  alt="made-in-usa"
+                />
+                <img
+                  src="/images/fda-registered-facility.webp"
+                  className="h-full w-full object-contain"
+                  alt="fda-registered-facility"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       {/* // Scientific refrence section  */}
