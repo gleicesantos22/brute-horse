@@ -242,7 +242,7 @@ const NewHomePage = () => {
             Now While Supplies Last!
           </h2>
 
-          <div className="relative h-8 flex items-center justify-center">
+          <div className="relative h-8 flex items-center justify-center animate-bounce">
             <Triangle className="rotate-180 h-16 w-16 absolute top-4 fill-red-600 text-red-600" />
             <Triangle className="rotate-180 h-16 w-16 absolute -top-2 text-white" />
           </div>
