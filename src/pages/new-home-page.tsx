@@ -1,7 +1,11 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import NewProductCard from "../components/new-product-card";
-import { Accordion } from "@radix-ui/react-accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../components/ui/accordion";
 
 const researchCitations = [
   {
@@ -233,14 +237,6 @@ const faqQuestions = [
 const NewHomePage = () => {
   return (
     <>
-      {/* FAQ Section */}
-      <div>
-        {faqQuestions?.map(
-          (element: { title: string; description: string }, index: number) => {
-            return <div> {element.title}</div>;
-          }
-        )}
-      </div>
       {/* Products Section */}
       <div className="max-w-7xl mx-auto px-4 py-8 border">
         <div>
@@ -330,6 +326,33 @@ const NewHomePage = () => {
               )
             )}
           </ul>
+        </div>
+      </div>
+      {/* FAQ Section */}
+      <div className="bg-gray-200 py-10 px-10">
+        <h1 className="text-2xl md:text-4xl font-bold text-center text-gray-900 mb-8 leading-tight tracking-tight">
+          Frequently Asked Questions
+        </h1>
+        <div className="max-w-6xl mx-auto">
+          <Accordion type="single" collapsible>
+            {faqQuestions?.map(
+              (
+                element: { title: string; description: string },
+                index: number
+              ) => {
+                return (
+                  <AccordionItem value={`item-${index + 1}`}>
+                    <AccordionTrigger className="font-bold bg-white px-4 rounded-lg mb-2">
+                      {element?.title}
+                    </AccordionTrigger>
+                    <AccordionContent className="p-4 border my-1">
+                      {element?.description}
+                    </AccordionContent>
+                  </AccordionItem>
+                );
+              }
+            )}
+          </Accordion>
         </div>
       </div>
       {/* Footer Section  */}

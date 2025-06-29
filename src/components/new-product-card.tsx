@@ -59,10 +59,10 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
   };
 
   const borderColors = {
-    yellow: "hover:border-yellow-300 shadow-md bg-white",
-    red: "hover:border-yellow-300 shadow-md bg-white",
-    blue: "hover:border-blue-300 shadow-md bg-white",
-    gray: "hover:border-gray-300 shadow-md bg-white",
+    yellow: "hover:border-yellow-300 bg-white",
+    red: "hover:border-yellow-300 bg-white",
+    blue: "hover:border-blue-300 bg-white",
+    gray: "hover:border-gray-300 bg-white",
   };
 
   const getHoverEffects = () => {
