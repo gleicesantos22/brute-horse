@@ -1,0 +1,443 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import NewProductCard from "../components/new-product-card";
+import { Accordion } from "@radix-ui/react-accordion";
+
+const researchCitations = [
+  {
+    id: 1,
+    title:
+      "Oral L-Citrulline Supplementation Improves Erection Hardness in Men with Mild Erectile Dysfunction",
+    author: "Stanislavov R, et al.",
+    journal: "Urology, 2011",
+  },
+  {
+    id: 2,
+    title:
+      "L-Citrulline and Erectile Dysfunction: A Systematic Review of Its Potential Benefits",
+    author: "Cormio L, et al.",
+    journal: "International Journal of Impotence Research, 2015",
+  },
+  {
+    id: 3,
+    title:
+      "The Efficacy of Acetyl-L-Carnitine in Combination with Sildenafil for Erectile Dysfunction After Radical Prostatectomy",
+    author: "Cavallini G, et al.",
+    journal: "BJU International, 2005",
+  },
+  {
+    id: 4,
+    title:
+      "L-Carnitine and Erectile Function: Mechanisms of Action in Vascular Health",
+    author: "Lenzi A, et al.",
+    journal: "Translational Andrology and Urology, 2016",
+  },
+  {
+    id: 5,
+    title:
+      "Efficacy and Safety of Pycnogenol and L-Arginine in Improving Erectile Function",
+    author: "Stanislavov R, et al.",
+    journal: "Journal of Sex & Marital Therapy, 2003",
+  },
+  {
+    id: 6,
+    title:
+      "Pine Bark Extract and Male Fertility: Evidence for Improved Sperm Function and Circulation",
+    author: "Roseff SJ",
+    journal: "Journal of Reproductive Medicine, 2002",
+  },
+  {
+    id: 7,
+    title:
+      "The Role of Mucuna Pruriens in Improving Sexual Function and Reducing Stress",
+    author: "Gupta A, et al.",
+    journal: "Fertility and Sterility, 2010",
+  },
+  {
+    id: 8,
+    title:
+      "Velvet Bean (Mucuna Pruriens) and Testosterone: Effects on Sexual Behavior in Men",
+    author: "Shukla KK, et al.",
+    journal: "Andrologia, 2012",
+  },
+  {
+    id: 9,
+    title:
+      "Maca Root as a Natural Aphrodisiac: Effects on Sexual Desire in Healthy Men",
+    author: "Gonzales GF, et al.",
+    journal: "Andrologia, 2002",
+  },
+  {
+    id: 10,
+    title:
+      "The Efficacy of Maca Root in Alleviating Sexual Dysfunction Induced by Antidepressants",
+    author: "Dording CM, et al.",
+    journal: "CNS Neuroscience & Therapeutics, 2008",
+  },
+  {
+    id: 11,
+    title:
+      "Effects of Grape Polyphenols on Vascular Health and Erectile Dysfunction",
+    author: "Georgiev V, et al.",
+    journal: "Molecular Nutrition & Food Research, 2014",
+  },
+  {
+    id: 12,
+    title:
+      "Antioxidant Properties of Grape Seed Extract and Its Role in Improving Blood Flow",
+    author: "Bagchi D, et al.",
+    journal: "Toxicology, 2002",
+  },
+  {
+    id: 13,
+    title:
+      "Saffron for Erectile Dysfunction: A Randomized, Double-Blind, Placebo-Controlled Study",
+    author: "Hosseinzadeh H, et al.",
+    journal: "Phytomedicine, 2009",
+  },
+  {
+    id: 14,
+    title:
+      "Saffron Extract and Sexual Function in Men with Erectile Dysfunction",
+    author: "Kashani L, et al.",
+    journal: "Human Psychopharmacology, 2013",
+  },
+  {
+    id: 15,
+    title:
+      "Zinc Supplementation and Its Effect on Sexual Performance and Testosterone Levels",
+    author: "Prasad AS",
+    journal: "Nutrition, 1996",
+  },
+  {
+    id: 16,
+    title: "Zinc Deficiency and Erectile Dysfunction: Mechanisms and Solutions",
+    author: "Fallah A, et al.",
+    journal: "Journal of Reproductive Biology, 2018",
+  },
+  {
+    id: 17,
+    title:
+      "Vitamin B3 (Niacin) Improves Erectile Function in Men with Dyslipidemia",
+    author: "Ng CF, et al.",
+    journal: "Journal of Sexual Medicine, 2011",
+  },
+  {
+    id: 18,
+    title:
+      "The Role of Niacin in Enhancing Penile Blood Flow and Reducing Erectile Dysfunction Symptoms",
+    author: "Sato K, et al.",
+    journal: "Vascular Health and Risk Management, 2008",
+  },
+  {
+    id: 19,
+    title:
+      "Natural Therapies for Erectile Dysfunction: A Review of Clinical Evidence",
+    author: "Shamloul R, et al.",
+    journal: "Journal of Sexual Medicine, 2013",
+  },
+  {
+    id: 20,
+    title:
+      "The Impact of Antioxidants on Male Reproductive Health: Focus on Grape Seed Extract",
+    author: "Elia J, et al.",
+    journal: "Antioxidants, 2019",
+  },
+];
+
+const productCards = [
+  {
+    badge: { text: "POPULAR", color: "blue" as const },
+    title: "3 Bottles",
+    subtitle: "90 days supply",
+    // image: "https://i.imgur.com/gTcOoJ7.png",
+    image: "/images/3.png",
+    price: "$69",
+    savings: "YOU SAVE $300",
+    features: ["180 Days Guarantee"],
+    buttonText: "Secure Order",
+    buttonStyle: "secondary" as const,
+    originalPrice: "$300",
+    finalPrice: "$207",
+    shipping: "+ FREE SHIPPING",
+    shippingColor: "green" as const,
+    link: "https://lucas-digitalbr.mycartpanda.com/checkout/188274332:1",
+    borderColor: "blue" as const,
+  },
+  {
+    badge: { text: "BEST VALUE", color: "red" as const },
+    title: "6 Bottles",
+    subtitle: "180 days supply",
+    // image: "https://i.postimg.cc/zH3WNjBw/6BOTTLE.png",
+    image: "/images/6.png",
+    price: "$49",
+    savings: "YOU SAVE $600",
+    features: ["Biggest Discount", "180 Days Guarantee"],
+    buttonText: "Secure Order",
+    buttonStyle: "primary" as const,
+    originalPrice: "$594",
+    finalPrice: "$294",
+    shipping: "+ FREE SHIPPING",
+    shippingColor: "green" as const,
+    link: "https://lucas-digitalbr.mycartpanda.com/checkout/188274365:1",
+    borderColor: "red" as const,
+  },
+  {
+    badge: { text: "STARTER", color: "gray" as const },
+    title: "1 Bottle",
+    subtitle: "30 days supply",
+    // image: "https://i.imgur.com/ojDbZ0n.png",
+    image: "/images/1.png",
+    price: "$79",
+    savings: "YOU SAVE $240",
+    features: ["180 Days Guarantee"],
+    buttonText: "Secure Order",
+    buttonStyle: "secondary" as const,
+    originalPrice: "$198",
+    finalPrice: "$79",
+    shipping: "+ $9.95 SHIPPING",
+    shippingColor: "blue" as const,
+    link: "https://lucas-digitalbr.mycartpanda.com/checkout/188271611:1",
+    borderColor: "gray" as const,
+  },
+];
+
+const faqQuestions = [
+  {
+    title: "How Many Bottles of Brute Horse Should I Order?",
+    description:
+      "For best results, use Brute Horse consistently for 3 to 6 months. That’s why we recommend ordering 3 to 6 bottles to support your full transformation.",
+  },
+  {
+    title: "Is Brute Horse Safe to Use Daily?",
+    description:
+      "Yes. Brute Horse is made from natural, clinically tested ingredients and manufactured in a GMP-certified, FDA-registered facility in the USA.",
+  },
+  {
+    title: "When Will I See Results After Taking Brute Horse?",
+    description:
+      "Most users report feeling increased energy and stamina within the first few weeks. Full benefits are typically seen after consistent use over 2–3 months.",
+  },
+  {
+    title: "How Do I Get a Refund if I’m Not Satisfied?",
+    description:
+      "Simply contact our support team within 180 days of your purchase and we’ll process your refund—no questions asked.",
+  },
+  {
+    title: "Is Brute Horse a One-Time Payment?",
+    description:
+      "Yes. There are no subscriptions or auto-billing. You pay once and receive your bottles with no future charges.",
+  },
+];
+
+const NewHomePage = () => {
+  return (
+    <>
+      {/* FAQ Section */}
+      <div>
+        {faqQuestions?.map(
+          (element: { title: string; description: string }, index: number) => {
+            return <div> {element.title}</div>;
+          }
+        )}
+      </div>
+      {/* Products Section */}
+      <div className="max-w-7xl mx-auto px-4 py-8 border">
+        <div>
+          <h2 className="text-2xl font-bold text-center mb-6">
+            Claim Your Discounted BeastForce
+            <br />
+            Now While Supplies Last!
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {productCards.map((card, index) => (
+            <NewProductCard key={index} {...card} />
+          ))}
+        </div>
+      </div>
+      {/* // Scientific refrence section  */}
+      <div className="py-20 bg-[#dcdcdc]">
+        <h1 className="text-4xl md:text-6xl font-bold text-center text-gray-900 mb-8 leading-tight tracking-tight">
+          Scientific References
+        </h1>
+        <div className="md:max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 p-6 md:px-12">
+          <ul className="text-sm font-normal space-y-4">
+            {researchCitations?.slice(0, 10).map(
+              (
+                element: {
+                  id: number;
+                  title: string;
+                  author: string;
+                  journal: string;
+                },
+                index: number
+              ) => (
+                <li
+                  key={index + 1}
+                  className="flex gap-3 transition-colors duration-200"
+                >
+                  <span className="flex-shrink-0 font-medium text-gray-500">
+                    {index + 1}.
+                  </span>
+                  <div className="flex-1">
+                    <h3 className="font-medium text-gray-700 mb-1 leading-snug">
+                      {element?.title}
+                    </h3>
+                    <p className="text-xs text-gray-500">
+                      <span className="font-medium text-gray-600">
+                        {element?.author}
+                      </span>{" "}
+                      • <span className="italic">{element?.journal}</span>
+                    </p>
+                  </div>
+                </li>
+              )
+            )}
+          </ul>
+
+          <ul className="text-sm font-normal space-y-4">
+            {researchCitations?.slice(10, 20).map(
+              (
+                element: {
+                  id: number;
+                  title: string;
+                  author: string;
+                  journal: string;
+                },
+                index: number
+              ) => (
+                <li
+                  key={index + 10}
+                  className="flex gap-3 transition-colors duration-200"
+                >
+                  <span className="flex-shrink-0 font-medium text-gray-500">
+                    {index + 11}.
+                  </span>
+                  <div className="flex-1">
+                    <h3 className="font-medium text-gray-700 mb-1 leading-snug">
+                      {element?.title}
+                    </h3>
+                    <p className="text-xs text-gray-500">
+                      <span className="font-medium text-gray-600">
+                        {element?.author}
+                      </span>{" "}
+                      • <span className="italic">{element?.journal}</span>
+                    </p>
+                  </div>
+                </li>
+              )
+            )}
+          </ul>
+        </div>
+      </div>
+      {/* Footer Section  */}
+      <footer className="bg-black text-gray-100 py-8 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          {/* Navigation Links */}
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-6">
+            <Link to="/" className="font-bold hover:text-red-400">
+              Contact
+            </Link>
+
+            <Link to="/" className="font-bold hover:text-red-400">
+              Terms
+            </Link>
+
+            <Link to="/" className="font-bold hover:text-red-400">
+              Privacy
+            </Link>
+
+            <Link to="/" className="font-bold hover:text-red-400">
+              Return Policy
+            </Link>
+
+            <Link to="/" className="font-bold hover:text-red-400">
+              Shipping
+            </Link>
+
+            <Link to="/" className="font-bold hover:text-red-400">
+              Disclaimer
+            </Link>
+
+            <Link to="/" className="font-bold hover:text-red-400">
+              References
+            </Link>
+          </div>
+
+          {/* FDA Disclaimer */}
+          <p className="text-center mb-6 italic">
+            Statements on this website have not been evaluated by the Food and
+            Drug Administration. Products are not intended to diagnose, treat,
+            cure or prevent any disease.
+          </p>
+
+          {/* Main Disclaimer */}
+          <div className="space-y-4 mb-6 text-sm text-center">
+            <p>
+              The website's content and the product for sale is based upon the
+              author's opinion and is provided solely on an 'AS IS' and 'AS
+              AVAILABLE' basis. You should do your own research and confirm the
+              information with other sources when searching for information
+              regarding health issues and always review the information
+              carefully with your professional health care provider before using
+              any of the products presented on this website and/or in the
+              product store here. Neither ClickBank nor the author may engage in
+              rendering medical or similar professional services or advice via
+              this website or in the product, and the information provided is
+              not intended to replace medical advice offered by a physician or
+              other licensed healthcare provider. You should not construe
+              ClickBank's sale of this product as an endorsement by ClickBank of
+              the views expressed herein, or any warranty or guarantee of any
+              strategy, recommendation, treatment, action, or application of
+              advice made by the author of the product.
+            </p>
+
+            <p>
+              Some names and personal identifying information on this site have
+              been changed to protect the privacy of individuals.
+            </p>
+            <p>
+              Testimonials, case studies, and examples found on this page are
+              results that have been forwarded to us by users of Brute Force and
+              related products are not intended to represent or guarantee that
+              anyone will achieve the same or similar results.
+            </p>
+          </div>
+
+          {/* ClickBank Notice */}
+          <div className="mb-6 text-sm">
+            <p>
+              ClickBank is the retailer of products on this site. CLICKBANK® is
+              a registered trademark of Click Sales Inc., a Delaware corporation
+              located at 1444 S. Entertainment Ave., Suite 410 Boise, ID 83709,
+              USA and used by permission. ClickBank's role as retailer does not
+              constitute an endorsement, approval or review of these products or
+              any claim, statement or opinion used in promotion of these
+              products.
+            </p>
+          </div>
+
+          {/* Support Links */}
+          <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 mb-6">
+            <Link to={"/"}>
+              For Product Support, please contact the vendor HERE.
+            </Link>
+
+            <Link to={"/"}>
+              For Order Support, please contact ClickBank HERE.
+            </Link>
+          </div>
+
+          {/* Copyright */}
+          <p className="text-center">
+            © Brute Force Research 2025. All Rights Reserved.
+          </p>
+        </div>
+      </footer>
+    </>
+  );
+};
+
+export default NewHomePage;
