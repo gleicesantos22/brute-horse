@@ -539,7 +539,7 @@ const NewHomePage = () => {
             </p>
             <p>
               Testimonials, case studies, and examples found on this page are
-              results that have been forwarded to us by users of Brute Force and
+              results that have been forwarded to us by users of Brute Horce and
               related products are not intended to represent or guarantee that
               anyone will achieve the same or similar results.
             </p>
@@ -571,7 +571,7 @@ const NewHomePage = () => {
 
           {/* Copyright */}
           <p className="text-center">
-            © Brute Force Research 2025. All Rights Reserved.
+            © Brute Horce Research 2025. All Rights Reserved.
           </p>
         </div>
       </footer>
