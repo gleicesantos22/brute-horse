@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import NewProductCard from "../components/new-product-card";
-import { Accordion } from "../components/ui/accordian";
+import { Accordion } from "../components/ui/Accordian";
 import { Triangle } from "lucide-react";
 
 const researchCitations = [
