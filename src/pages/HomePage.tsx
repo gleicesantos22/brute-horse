@@ -9,7 +9,6 @@ import {
   Users,
   TrendingUp,
   Zap,
-  ChevronDown,
 } from "lucide-react";
 import ProductCard from "../components/ProductCard";
 import Websitelogo from "../components/logo";
@@ -18,14 +17,33 @@ import { Link } from "react-router-dom";
 function HomePage() {
   const productCards = [
     {
+      badge: { text: "BEST VALUE", color: "yellow" as const },
+      title: "6 Bottles",
+      subtitle: "180 days supply",
+      // image: "https://i.postimg.cc/zH3WNjBw/6BOTTLE.png",
+      image: "/images/6.png",
+      price: "$49",
+      savings: "YOU SAVE $600",
+      features: ["Biggest Discount", "180 Days Guarantee"],
+      buttonText: "Secure Order",
+      buttonStyle: "primary" as const,
+      originalPrice: "$594",
+      finalPrice: "$294",
+      shipping: "+ FREE SHIPPING",
+      shippingColor: "green" as const,
+      link: "https://lucas-digitalbr.mycartpanda.com/checkout/188274365:1",
+      borderColor: "yellow" as const,
+    },
+    {
       badge: { text: "POPULAR", color: "blue" as const },
       title: "3 Bottles",
       subtitle: "90 days supply",
+      // image: "https://i.imgur.com/gTcOoJ7.png",
       image: "/images/3.png",
       price: "$69",
       savings: "YOU SAVE $300",
       features: ["180 Days Guarantee"],
-      buttonText: "BUY NOW",
+      buttonText: "Secure Order",
       buttonStyle: "secondary" as const,
       originalPrice: "$300",
       finalPrice: "$207",
@@ -35,31 +53,15 @@ function HomePage() {
       borderColor: "blue" as const,
     },
     {
-      badge: { text: "BEST VALUE!", color: "red" as const },
-      title: "6 Bottles",
-      subtitle: "180 days supply",
-      image: "/images/6.png",
-      price: "$49",
-      savings: "YOU SAVE $600!",
-      features: ["BIGGEST DISCOUNT", "180 Days Guarantee"],
-      buttonText: "BUY NOW",
-      buttonStyle: "primary" as const,
-      originalPrice: "$594",
-      finalPrice: "$294",
-      shipping: "+ FREE SHIPPING",
-      shippingColor: "green" as const,
-      link: "https://lucas-digitalbr.mycartpanda.com/checkout/188274365:1",
-      borderColor: "red" as const,
-    },
-    {
       badge: { text: "STARTER", color: "gray" as const },
       title: "1 Bottle",
       subtitle: "30 days supply",
+      // image: "https://i.imgur.com/ojDbZ0n.png",
       image: "/images/1.png",
       price: "$79",
       savings: "YOU SAVE $240",
       features: ["180 Days Guarantee"],
-      buttonText: "BUY NOW",
+      buttonText: "Secure Order",
       buttonStyle: "secondary" as const,
       originalPrice: "$198",
       finalPrice: "$79",
@@ -74,13 +76,13 @@ function HomePage() {
     <div className="min-h-screen bg-white">
       {/* Professional Header */}
       <nav className="bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 sticky top-0 z-50">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8 border">
           <div className="flex justify-between items-center h-20">
             {/* Logo Section - Left Side */}
             <Websitelogo />
 
             {/* Trust Badges - Right Side */}
-            <div className="hidden lg:flex items-center space-x-6">
+            {/* <div className="hidden lg:flex items-center space-x-6">
               <div className="flex items-center space-x-2 text-sm text-gray-600 bg-gray-50 px-4 py-2 rounded-full border border-gray-200">
                 <Shield className="h-4 w-4 text-blue-500" />
                 <span className="font-medium">180 Days Guarantee</span>
@@ -93,10 +95,10 @@ function HomePage() {
                 <Award className="h-4 w-4 text-purple-500" />
                 <span className="font-medium">FDA Approved</span>
               </div>
-            </div>
+            </div> */}
 
             {/* Mobile Trust Badges */}
-            <div className="lg:hidden flex items-center space-x-3">
+            {/* <div className="lg:hidden flex items-center space-x-3">
               <div className="flex items-center space-x-1 text-xs text-gray-600 bg-gray-50 px-3 py-2 rounded-full border border-gray-200">
                 <Shield className="h-3 w-3 text-blue-500" />
                 <span className="font-medium">180 Days</span>
@@ -105,7 +107,7 @@ function HomePage() {
                 <Truck className="h-3 w-3 text-green-500" />
                 <span className="font-medium">Free Ship</span>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </nav>
@@ -146,6 +148,22 @@ function HomePage() {
               <span className="font-semibold text-gray-800">performance</span>{" "}
               with scientifically-backed natural ingredients
             </p>
+
+            {/* Trust Badges*/}
+            <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mb-6">
+              <div className="flex items-center space-x-2 text-sm text-gray-600 bg-gray-50 px-4 py-2 rounded-full border border-gray-200">
+                <Shield className="h-4 w-4 text-blue-500" />
+                <span className="font-medium">180 Days Guarantee</span>
+              </div>
+              <div className="flex items-center space-x-2 text-sm text-gray-600 bg-gray-50 px-4 py-2 rounded-full border border-gray-200">
+                <Truck className="h-4 w-4 text-green-500" />
+                <span className="font-medium">Free Worldwide Shipping</span>
+              </div>
+              <div className="flex items-center space-x-2 text-sm text-gray-600 bg-gray-50 px-4 py-2 rounded-full border border-gray-200">
+                <Award className="h-4 w-4 text-purple-500" />
+                <span className="font-medium">FDA Approved</span>
+              </div>
+            </div>
 
             {/* Enhanced Trust Badges */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto my-16">
@@ -189,39 +207,78 @@ function HomePage() {
                 </div>
               </div>
             </div>
+
+            {/* Social Proof Stats */}
+            {/* <div className="grid grid-cols-1 md:grid-cols-3 justify-center gap-4 md:gap-6 lg:gap-8 text-center">
+              <div className="border border-blue-200 flex gap-2 items-center p-4 px-8 bg-white rounded-full shadow-sm hover:shadow-md transition-shadow">
+                <Users className="w-8 h-8 text-blue-600" />
+                <div>
+                  <p className="text-left text-2xl font-bold text-gray-800">
+                    50,000+
+                  </p>
+                  <p className="text-left text-sm font-medium text-gray-600">
+                    Satisfied Customers
+                  </p>
+                </div>
+              </div>
+              <div className="border border-yellow-200 flex gap-2 items-center p-4 px-8 bg-white rounded-full shadow-sm hover:shadow-md transition-shadow">
+                <Star className="w-8 h-8 text-yellow-500" />
+                <div>
+                  <p className="text-left text-2xl font-bold text-gray-800">
+                    4.9/5
+                  </p>
+                  <p className="text-left text-sm font-medium text-gray-600">
+                    Average Rating
+                  </p>
+                </div>
+              </div>
+              <div className="border border-green-200 flex gap-2 items-center p-4 px-8 bg-white rounded-full shadow-sm hover:shadow-md transition-shadow">
+                <TrendingUp className="w-8 h-8 text-green-600" />
+                <div>
+                  <p className="text-left text-2xl font-bold text-gray-800">
+                    92%
+                  </p>
+                  <p className="text-left text-sm font-medium text-gray-600">
+                    Reorder Rate
+                  </p>
+                </div>
+              </div>
+            </div> */}
           </div>
         </div>
       </div>
 
-      {/* Dark Header Section with Arrow */}
-      <section className="bg-black text-white py-8 relative">
-        <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Claim Your Discounted BeastForce<br />
-            Now While Supplies Last!
-          </h2>
-          
-          {/* Red Arrow pointing down */}
-          <div className="flex justify-center">
-            <div className="w-0 h-0 border-l-[20px] border-r-[20px] border-t-[30px] border-l-transparent border-r-transparent border-t-red-600"></div>
-          </div>
+      {/* Enhanced Offers Section */}
+      <section className="py-12 lg:py-20 bg-gradient-to-br from-gray-50 to-white relative">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            }}
+          ></div>
         </div>
-      </section>
 
-      {/* Product Cards Section */}
-      <section className="py-12 bg-gray-100 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Product Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-            {/* Reorder cards to match image: Basic, Best Value, Most Popular */}
-            <div className="order-1">
-              <ProductCard {...productCards.find(card => card.badge.text === "STARTER")!} />
-            </div>
-            <div className="order-2">
-              <ProductCard {...productCards.find(card => card.badge.text === "BEST VALUE!")!} />
-            </div>
-            <div className="order-3">
-              <ProductCard {...productCards.find(card => card.badge.text === "POPULAR")!} />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center mb-20">
+            <h2 className="text-5xl font-bold text-gray-900 mb-6">
+              Choose Your Package
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Select the perfect supply for your transformation journey. Most
+              customers choose our 6-bottle package for maximum results and
+              savings.
+            </p>
+          </div>
+
+          {/* Fixed Product Cards Grid with proper spacing for badges */}
+          <div className="pt-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 items-start">
+              {productCards.map((card, index) => (
+                <ProductCard key={index} {...card} />
+              ))}
             </div>
           </div>
         </div>
@@ -242,10 +299,11 @@ function HomePage() {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-100 via-transparent to-blue-100 rounded-full blur-3xl opacity-40 scale-110"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-100/50 to-transparent rounded-3xl"></div>
-                <h1 className="text-6xl md:text-8xl font-black mb-8 leading-tight tracking-tight">
+                <h1 className="text-6xl md:text-8xl font-black  mb-8 leading-tight tracking-tight">
                   Best Offer
                 </h1>
                 <img
+                  // src="https://i.postimg.cc/zH3WNjBw/6BOTTLE.png"
                   src="/images/banner.png"
                   alt="BRUTE HORSE Products"
                   className="object-cover relative w-full max-w-3xl mx-auto transition-all duration-700 hover:scale-105 drop-shadow-2xl"

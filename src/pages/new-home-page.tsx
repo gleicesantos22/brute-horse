@@ -1,11 +1,7 @@
 import { Link } from "react-router-dom";
 import NewProductCard from "../components/new-product-card";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "../components/ui/accordion";
+import { Accordion } from "../components/ui/Accordian";
+import { Triangle } from "lucide-react";
 
 const researchCitations = [
   {
@@ -155,8 +151,8 @@ const productCards = [
     title: "3 Bottles",
     subtitle: "90 days supply",
     // image: "https://i.imgur.com/gTcOoJ7.png",
-    image: "/images/3.png",
-    price: "$69",
+    image: "/images/small-bottle-3.PNG",
+    price: "69",
     savings: "YOU SAVE $300",
     features: ["180 Days Guarantee"],
     buttonText: "Secure Order",
@@ -173,8 +169,8 @@ const productCards = [
     title: "6 Bottles",
     subtitle: "180 days supply",
     // image: "https://i.postimg.cc/zH3WNjBw/6BOTTLE.png",
-    image: "/images/6.png",
-    price: "$49",
+    image: "/images/small-bottle-6.PNG",
+    price: "49",
     savings: "YOU SAVE $600",
     features: ["Biggest Discount", "180 Days Guarantee"],
     buttonText: "Secure Order",
@@ -182,7 +178,7 @@ const productCards = [
     originalPrice: "$594",
     finalPrice: "$294",
     shipping: "+ FREE SHIPPING",
-    shippingColor: "green" as const,
+    shippingColor: "yellow" as const,
     link: "https://lucas-digitalbr.mycartpanda.com/checkout/188274365:1",
     borderColor: "red" as const,
   },
@@ -191,8 +187,8 @@ const productCards = [
     title: "1 Bottle",
     subtitle: "30 days supply",
     // image: "https://i.imgur.com/ojDbZ0n.png",
-    image: "/images/1.png",
-    price: "$79",
+    image: "/images/small-bottle-1.PNG",
+    price: "79",
     savings: "YOU SAVE $240",
     features: ["180 Days Guarantee"],
     buttonText: "Secure Order",
@@ -238,88 +234,169 @@ const NewHomePage = () => {
   return (
     <>
       {/* Products Section */}
-      <div className="max-w-7xl mx-auto px-4 py-8 border">
-        <div>
-          <h2 className="text-2xl font-bold text-center mb-6">
+      <div>
+        <div className="bg-black text-white py-4 mb-8">
+          <h2 className="text-2xl font-bold text-center mb-2">
             Claim Your Discounted Brute Horse
             <br />
             Now While Supplies Last!
           </h2>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {productCards.map((card, index) => (
-            <NewProductCard key={index} {...card} />
-          ))}
+          <div className="relative h-8 flex items-center justify-center animate-bounce">
+            <Triangle className="rotate-180 h-16 w-16 absolute top-4 fill-red-600 text-red-600" />
+            <Triangle className="rotate-180 h-16 w-16 absolute -top-2 text-white" />
+          </div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {productCards.map((card, index) => (
+              <NewProductCard key={index} {...card} />
+            ))}
+          </div>
         </div>
       </div>
       {/* Satisfaction gaurantee */}
-      <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
-        <div className="flex flex-col md:flex-row gap-4 items-center p-8 md:p-10 ">
-          <img
-            src="/images/money-back-guarantee.webp"
-            className="h-[200px] w-[200px] md:h-[300px] md:w-[300px] object-contain"
-            alt="registered"
-          />
+      <div
+        style={{
+          boxShadow:
+            "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset",
+        }}
+        className="bg-[url('/images/guarantee-bg.webp')] bg-cover bg-white bg-no-repeat"
+      >
+        <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
+          <div className="flex flex-col md:flex-row gap-4 items-center p-8 md:p-10 ">
+            <img
+              src="/images/money-back-guarantee.webp"
+              className="h-[200px] w-[200px] md:h-[300px] md:w-[300px] object-contain"
+              alt="registered"
+            />
 
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 leading-tight">
-              We're so confident Brute Horse will reignite your vitality, we
-              back it with a{" "}
-              <span className="text-blue-600">100% satisfaction guarantee</span>{" "}
-              for 60 days.
-            </h2>
-            <div className="space-y-4 text-gray-700 text-base md:text-lg">
-              <p>
-                Start using Brute Horse as soon as it arrives, and within days
-                you might notice enhanced energy, improved stamina, and a
-                stronger sense of confidence. Over time, as your body adjusts to
-                the natural formula, you could experience firmer, more
-                consistent performance and a renewed sense of intimacy in your
-                relationships.
-              </p>
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 leading-tight">
+                We're so confident Brute Horse will reignite your vitality, we
+                back it with a{" "}
+                <span className="text-blue-600">
+                  100% satisfaction guarantee
+                </span>{" "}
+                for 60 days.
+              </h2>
+              <div className="space-y-4 text-gray-700 text-base md:text-lg">
+                <p>
+                  Start using Brute Horse as soon as it arrives, and within days
+                  you might notice enhanced energy, improved stamina, and a
+                  stronger sense of confidence. Over time, as your body adjusts
+                  to the natural formula, you could experience firmer, more
+                  consistent performance and a renewed sense of intimacy in your
+                  relationships.
+                </p>
 
-              <p>
-                This is your opportunity to track your transformation—whether
-                it's regaining the energy for date nights, feeling revitalized
-                during your workouts, or simply rediscovering the confidence you
-                thought was gone.
-              </p>
+                <p>
+                  This is your opportunity to track your transformation—whether
+                  it's regaining the energy for date nights, feeling revitalized
+                  during your workouts, or simply rediscovering the confidence
+                  you thought was gone.
+                </p>
 
-              <p className="font-medium">
-                If after several weeks or even months you're not completely
-                satisfied with your results, we'll refund your money in full—no
-                questions asked. With Brute Horse, you're not just taking
-                control of your vitality—you're taking control of your life.
-              </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-                <img
-                  src="/images/gmp-certified.webp"
-                  className="h-full w-full object-contain"
-                  alt="gmp-certified"
-                />
-                <img
-                  src="/images/natural-formula.webp"
-                  className="h-full w-full object-contain"
-                  alt="natural-formula"
-                />
-                <img
-                  src="/images/made-in-usa.webp"
-                  className="h-full w-full object-contain"
-                  alt="made-in-usa"
-                />
-                <img
-                  src="/images/fda-registered-facility.webp"
-                  className="h-full w-full object-contain"
-                  alt="fda-registered-facility"
-                />
+                <p className="font-medium">
+                  If after several weeks or even months you're not completely
+                  satisfied with your results, we'll refund your money in
+                  full—no questions asked. With Brute Horse, you're not just
+                  taking control of your vitality—you're taking control of your
+                  life.
+                </p>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 !mt-20">
+                  <img
+                    src="/images/gmp-certified.webp"
+                    className="h-full w-full object-contain"
+                    alt="gmp-certified"
+                  />
+                  <img
+                    src="/images/natural-formula.webp"
+                    className="h-full w-full object-contain"
+                    alt="natural-formula"
+                  />
+                  <img
+                    src="/images/made-in-usa.webp"
+                    className="h-full w-full object-contain"
+                    alt="made-in-usa"
+                  />
+                  <img
+                    src="/images/fda-registered-facility.webp"
+                    className="h-full w-full object-contain"
+                    alt="fda-registered-facility"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      {/* Product Section */}
+      <div>
+        <div className="bg-black text-white py-4 mb-8">
+          <h2 className="text-2xl font-bold text-center mb-2">
+            Claim Your Discounted Brute Horse
+            <br />
+            Now While Supplies Last!
+          </h2>
+
+          <div className="relative h-8 flex items-center justify-center animate-bounce">
+            <Triangle className="rotate-180 h-16 w-16 absolute top-4 fill-red-600 text-red-600" />
+            <Triangle className="rotate-180 h-16 w-16 absolute -top-2 text-white" />
+          </div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {productCards.map((card, index) => (
+              <NewProductCard key={index} {...card} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="bg-[url('/images/faq-bg.webp')] bg-cover bg-center">
+        <div className="py-10 px-10">
+          <h1 className="text-2xl md:text-4xl font-bold text-center text-gray-100 mb-8 leading-tight tracking-tight">
+            Frequently Asked Questions
+          </h1>
+          <div className="max-w-6xl mx-auto">
+            <Accordion items={faqQuestions} allowMultipleOpen={false} />
+          </div>
+        </div>
+      </div>
+
+      {/* Products Section */}
+      <div>
+        <div className="bg-black text-white py-4 mb-8">
+          <h2 className="text-2xl font-bold text-center mb-2">
+            Claim Your Discounted Brute Horse
+            <br />
+            Now While Supplies Last!
+          </h2>
+
+          <div className="relative h-8 flex items-center justify-center animate-bounce">
+            <Triangle className="rotate-180 h-16 w-16 absolute top-4 fill-red-600 text-red-600" />
+            <Triangle className="rotate-180 h-16 w-16 absolute -top-2 text-white" />
+          </div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {productCards.map((card, index) => (
+              <NewProductCard key={index} {...card} />
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* // Scientific refrence section  */}
-      <div className="py-20 bg-[#dcdcdc]">
+      <div
+        className="py-20 bg-gray-100"
+        style={{
+          boxShadow:
+            "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset",
+        }}
+      >
         <h1 className="text-4xl md:text-6xl font-bold text-center text-gray-900 mb-8 leading-tight tracking-tight">
           Scientific References
         </h1>
@@ -393,33 +470,7 @@ const NewHomePage = () => {
           </ul>
         </div>
       </div>
-      {/* FAQ Section */}
-      <div className="bg-gray-200 py-10 px-10">
-        <h1 className="text-2xl md:text-4xl font-bold text-center text-gray-900 mb-8 leading-tight tracking-tight">
-          Frequently Asked Questions
-        </h1>
-        <div className="max-w-6xl mx-auto">
-          <Accordion type="single" collapsible>
-            {faqQuestions?.map(
-              (
-                element: { title: string; description: string },
-                index: number
-              ) => {
-                return (
-                  <AccordionItem value={`item-${index + 1}`}>
-                    <AccordionTrigger className="font-bold bg-white px-4 rounded-lg mb-2">
-                      {element?.title}
-                    </AccordionTrigger>
-                    <AccordionContent className="p-4 border my-1">
-                      {element?.description}
-                    </AccordionContent>
-                  </AccordionItem>
-                );
-              }
-            )}
-          </Accordion>
-        </div>
-      </div>
+
       {/* Footer Section  */}
       <footer className="bg-black text-gray-100 py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -488,7 +539,7 @@ const NewHomePage = () => {
             </p>
             <p>
               Testimonials, case studies, and examples found on this page are
-              results that have been forwarded to us by users of Brute Force and
+              results that have been forwarded to us by users of Brute Horce and
               related products are not intended to represent or guarantee that
               anyone will achieve the same or similar results.
             </p>
@@ -520,7 +571,7 @@ const NewHomePage = () => {
 
           {/* Copyright */}
           <p className="text-center">
-            © Brute Force Research 2025. All Rights Reserved.
+            © Brute Horce Research 2025. All Rights Reserved.
           </p>
         </div>
       </footer>
