@@ -54,9 +54,12 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
 
   const buttonStyles = {
     primary:
-      "bg-yellow-400 text-black font-bold py-4 px-6 border-2 border-yellow-300 rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-105",
+      // "bg-yellow-400 text-black font-bold py-4 px-6 border-2 border-yellow-300 rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-105",
+      "bg-yellow-400 font-montserrat text-xl font-bold italic rounded-[0.5em] leading-none italic leading-none py-4 px-2 rounded-lg py-2 px-6 no-underline shadow-[inset_8px_-4px_rgba(0,0,0,0.05)] transition-all duration-300 ease-in hover:bg-yellow-400 hover:shadow-[inset_0_4px_rgba(0,0,0,0.05)] hover:promo:bg-gradient-to-b hover:promo:from-[#fccd15] hover:promo:from-50% hover:promo:via-[#ffd814] hover:promo:via-51%",
+
     secondary:
-      "bg-gray-200 hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-700 text-gray-900 hover:text-white border-2 border-gray-300 hover:border-transparent font-bold py-4 px-6 rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105",
+      " text-xl font-[700] bg-gray-200 text-gray-900 font-montserrat text-xl italic leading-none py-4 px-2 rounded-lg no-underline border-none shadow-[inset_0_-4px_rgba(0,0,0,0.05)]transition-all duration-300 ease-inhover:bg-[var(--primary-color)] hover:shadow-[inset_0_4px_rgba(0,0,0,0.05)]",
+    // "bg-gray-200 hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-700 text-gray-900 hover:text-white border-2 border-gray-300 hover:border-transparent font-bold py-4 px-6 rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105",
   };
 
   const shippingColors = {
@@ -98,7 +101,7 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
 
   const getTextcolor = () => {
     if (borderColor === "red") {
-      return "text-white";
+      return "text-white [text-shadow:0px_2px_rgba(0,0,0,0.64)]";
     }
     return "text-black";
   };
@@ -113,7 +116,7 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
         </div>
       )} */}
       <div
-        className={`relative cursor-pointer rounded-2xl p-2 transition-all duration-500 ${getHoverEffects()} ${
+        className={`font-montserrat relative cursor-pointer rounded-2xl p-2 transition-all duration-500 ${getHoverEffects()} ${
           borderColors[borderColor]
         } group overflow-hidden`}
         // style={{ minHeight: "700px" }}
@@ -146,9 +149,9 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
           className={`flex flex-col h-full rounded-b-xl py-6 px-0`}
         >
           {/* Header Section - Fixed Height */}
-          <div className="text-center mb-6" style={{ minHeight: "120px" }}>
+          <div className="text-center mb-4">
             <h3
-              className={`text-5xl font-extrabold tracking-wide  mb-0 ${getTextcolor()}`}
+              className={`text-3xl md:text-4xl font-[800] tracking-wide mb-0 ${getTextcolor()}`}
             >
               {title}
             </h3>
@@ -172,7 +175,7 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
               <img
                 src={image}
                 alt={`${title} Product`}
-                className="relative max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-110"
+                className="relative max-w-full max-h-full h-[200px] md:h-[300px] object-contain transition-all duration-500"
               />
               {borderColor === "yellow" && (
                 <div className="absolute inset-0 bg-gradient-to-t from-yellow-500/10 via-transparent to-orange-500/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -184,22 +187,25 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
           <div className="text-center mb-6" style={{ minHeight: "180px" }}>
             <div className="flex items-center justify-center mb-4">
               <span
-                className={`text-4xl font-black text-gray-900 ${
-                  borderColor === "red" && "text-white"
+                className={`text-4xl font-[800] text-gray-900 ${
+                  borderColor === "red" &&
+                  "text-white [text-shadow:0px_2px_rgba(0,0,0,0.64)] "
                 }`}
               >
                 $
               </span>
               <span
-                className={`text-7xl font-black text-gray-900 ${
-                  borderColor === "red" && "text-white"
+                className={`text-7xl font-[800] text-gray-900 ${
+                  borderColor === "red" &&
+                  "text-white [text-shadow:0px_2px_rgba(0,0,0,0.64)]"
                 }`}
               >
                 {price}
               </span>
               <span
                 className={`text-xl leading-[1.2] text-gray-900 ml-2 font-extrabold w-[20px] ${
-                  borderColor === "red" && "text-white "
+                  borderColor === "red" &&
+                  "text-white [text-shadow:0px_2px_rgba(0,0,0,0.64)]"
                 }`}
               >
                 PER BOTTLE
@@ -220,18 +226,20 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
               <div className="space-y-2 text-center">
                 <div
                   key={"index"}
-                  className={`border-b border-t py-2 flex items-center justify-center space-x-2 text-md text-center text-gray-700 ${
-                    borderColor === "red" && "text-yellow-500"
+                  className={`py-2 flex items-center justify-center space-x-2 text-md text-center text-gray-700 ${
+                    borderColor === "red" ? "text-[#fccd15] border-t border-b border-dashed border-[rgba(0,0,0,0.42)]" :"border-t border-dashed border-[rgba(0,0,0,0.12)]"
                   }}`}
                 >
                   <CheckCircle
                     className={`w-4 h-4  ${
-                      borderColor === "red" ? "text-yellow-400" : "text-red-600"
+                      borderColor === "red" ? "text-[#fccd15]" : "text-red-600"
                     }`}
                   />
                   <span
-                    className={`font-medium ${
-                      borderColor === "red" ? "text-yellow-400" : "text-red-600"
+                    className={`font-[800] uppercase ${
+                      borderColor === "red"
+                        ? "text-[#fccd15] [text-shadow:0px_2px_rgba(0,0,0,0.64)]"
+                        : "text-red-600"
                     }`}
                   >
                     {savings}
@@ -240,18 +248,21 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
                 {features.map((feature, index) => (
                   <div
                     key={index}
-                    className={`border-b border-gray-100 py-1 flex items-center justify-center space-x-2 text-md text-center text-gray-700 ${
-                      borderColor === "red" && "text-white"
+                    className={`py-1 flex items-center justify-center space-x-2 text-md text-center text-gray-900 ${
+                      borderColor === "red"
+                        ? "text-white border-b border-dashed border-[rgba(255, 255, 255, 0.42)]"
+                        : "border-b border-dashed border-[rgba(146, 41, 41, 0.42)]"
                     }}`}
                   >
                     <CheckCircle
-                      className={`w-4 h-4 text-green-500 ${
+                      className={`w-4 h-4 text-gray-900 ${
                         borderColor === "red" && "text-white"
                       }`}
                     />
                     <span
-                      className={`font-medium ${
-                        borderColor === "red" && "text-white font-medium"
+                      className={`font-[800] ${
+                        borderColor === "red" &&
+                        "text-white font-medium [text-shadow:0px_2px_rgba(0,0,0,0.64)]"
                       }`}
                     >
                       {feature}
@@ -263,23 +274,23 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
           </div>
 
           {/* CTA Button Section - Fixed Height */}
-          <div className="mb-6 mx-3 italic" style={{ minHeight: "60px" }}>
+          <div className="mb-3 mx-3 italic">
             <a
               href={link}
-              className={`block w-full ${buttonStyles[buttonStyle]} text-2xl transition-all duration-300 group/button text-center no-underline`}
+              className={`block w-full ${buttonStyles[buttonStyle]} transition-all duration-300 group/button text-center no-underline`}
             >
               <span className="flex items-center justify-center space-x-3">
                 {/* <Shield className="w-5 h-5" /> */}
-                <ShoppingCart className="w-8 h-8" />
+                <ShoppingCart className="w-6 h-6" />
                 <span>{buttonText}</span>
-                <ArrowRight className="w-5 h-5 transition-transform group-hover/button:translate-x-2" />
+                {/* <ArrowRight className="w-5 h-5 transition-transform group-hover/button:translate-x-2" /> */}
               </span>
             </a>
           </div>
 
           {/* Payment Info Section - Fixed Height */}
-          <div className="text-center mt-auto" style={{ minHeight: "160px" }}>
-            <div className="flex justify-center mb-4">
+          <div className="text-center mt-auto">
+            <div className="flex justify-center mb-2">
               <div className="">
                 <img
                   src="https://ed.tb3pages.fun/wp-content/uploads/2025/04/cards.webp"
@@ -289,18 +300,31 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
               </div>
             </div>
 
-            <div className="space-y-2">
-              <div className="flex items-center justify-center space-x-3">
+            <div className="space-y-0">
+              <div className="flex items-center justify-center space-x-2">
                 <span
-                  className={`line-through decoration-red-600  text-lg font-medium ${
-                    borderColor === "red" ? "text-gray-400" : "text-gray-400"
+                  className={`font-medium ${
+                    borderColor === "red"
+                      ? "text-white [text-shadow:0px_2px_rgba(0,0,0,0.64)]e"
+                      : "text-gray-900"
+                  }`}
+                >
+                  {" "}
+                  Total:
+                </span>
+                <span
+                  className={`line-through decoration-red-600  text-md font-medium ${
+                    borderColor === "red"
+                      ? "text-gray-100 [text-shadow:0px_2px_rgba(0,0,0,0.64)]"
+                      : "text-gray-500"
                   }`}
                 >
                   {originalPrice}
                 </span>
                 <span
-                  className={`font-black text-gray-900 text-2xl ${
-                    borderColor === "red" && "text-white"
+                  className={`font-[800] text-gray-900 text-lg ${
+                    borderColor === "red" &&
+                    "text-white [text-shadow:0px_2px_rgba(0,0,0,0.64)]"
                   }`}
                 >
                   {finalPrice}
@@ -308,7 +332,7 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
               </div>
 
               <div
-                className={`inline-block px-4 py-2 rounded-full font-bold text-lg ${shippingColors[shippingColor]}`}
+                className={`inline-block px-4 py-0 rounded-full font-bold text-lg ${shippingColors[shippingColor]}`}
               >
                 {shipping}
               </div>
