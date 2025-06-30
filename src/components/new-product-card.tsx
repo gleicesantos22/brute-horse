@@ -151,7 +151,7 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
           </div>
 
           {/* Product Image Section - Fixed Height */}
-          <div className="flex justify-center mb-6" style={{ height: "200px" }}>
+          <div className="flex justify-center mb-6" >
             <div className="relative group/image flex items-center justify-center w-full h-full">
               <div
                 className={`absolute inset-0 ${
@@ -163,7 +163,7 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
               <img
                 src={image}
                 alt={`${title} Product`}
-                className="relative max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-110 drop-shadow-lg"
+                className="relative max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-110"
               />
               {borderColor === "yellow" && (
                 <div className="absolute inset-0 bg-gradient-to-t from-yellow-500/10 via-transparent to-orange-500/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
