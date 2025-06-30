@@ -294,7 +294,7 @@ const NewHomePage = () => {
                 questions asked. With Brute Horse, you're not just taking
                 control of your vitality—you're taking control of your life.
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 !mt-20">
                 <img
                   src="/images/gmp-certified.webp"
                   className="h-full w-full object-contain"
