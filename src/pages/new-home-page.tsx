@@ -261,6 +261,7 @@ const NewHomePage = () => {
           boxShadow:
             "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset",
         }}
+        className="bg-[url('/images/guarantee-bg.webp')] bg-cover bg-white bg-no-repeat"
       >
         <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
           <div className="flex flex-col md:flex-row gap-4 items-center p-8 md:p-10 ">
@@ -330,6 +331,64 @@ const NewHomePage = () => {
           </div>
         </div>
       </div>
+      {/* Product Section */}
+      <div>
+        <div className="bg-black text-white py-4 mb-8">
+          <h2 className="text-2xl font-bold text-center mb-2">
+            Claim Your Discounted Brute Horse
+            <br />
+            Now While Supplies Last!
+          </h2>
+
+          <div className="relative h-8 flex items-center justify-center animate-bounce">
+            <Triangle className="rotate-180 h-16 w-16 absolute top-4 fill-red-600 text-red-600" />
+            <Triangle className="rotate-180 h-16 w-16 absolute -top-2 text-white" />
+          </div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {productCards.map((card, index) => (
+              <NewProductCard key={index} {...card} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="bg-[url('/images/faq-bg.webp')] bg-cover bg-center">
+        <div className="py-10 px-10">
+          <h1 className="text-2xl md:text-4xl font-bold text-center text-gray-100 mb-8 leading-tight tracking-tight">
+            Frequently Asked Questions
+          </h1>
+          <div className="max-w-6xl mx-auto">
+            <Accordion items={faqQuestions} allowMultipleOpen={false} />
+          </div>
+        </div>
+      </div>
+
+      {/* Products Section */}
+      <div>
+        <div className="bg-black text-white py-4 mb-8">
+          <h2 className="text-2xl font-bold text-center mb-2">
+            Claim Your Discounted Brute Horse
+            <br />
+            Now While Supplies Last!
+          </h2>
+
+          <div className="relative h-8 flex items-center justify-center animate-bounce">
+            <Triangle className="rotate-180 h-16 w-16 absolute top-4 fill-red-600 text-red-600" />
+            <Triangle className="rotate-180 h-16 w-16 absolute -top-2 text-white" />
+          </div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {productCards.map((card, index) => (
+              <NewProductCard key={index} {...card} />
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* // Scientific refrence section  */}
       <div
         className="py-20 bg-gray-100"
@@ -411,21 +470,7 @@ const NewHomePage = () => {
           </ul>
         </div>
       </div>
-      {/* FAQ Section */}
-      <div
-        className="py-10 px-10"
-        style={{
-          boxShadow:
-            "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset",
-        }}
-      >
-        <h1 className="text-2xl md:text-4xl font-bold text-center text-gray-900 mb-8 leading-tight tracking-tight">
-          Frequently Asked Questions
-        </h1>
-        <div className="max-w-6xl mx-auto">
-          <Accordion items={faqQuestions} allowMultipleOpen={false} />
-        </div>
-      </div>
+
       {/* Footer Section  */}
       <footer className="bg-black text-gray-100 py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
