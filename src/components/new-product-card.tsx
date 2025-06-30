@@ -134,7 +134,16 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
 
         {/* Card Content with Fixed Layout */}
         <div
-          className={`flex flex-col h-full ${getCardBackground()} rounded-b-xl py-6 px-0`}
+          style={
+            borderColor === "red"
+              ? {
+                  backgroundColor: "transparent",
+                  backgroundImage:
+                    "radial-gradient(at center center, #D70000 0%, #190000 100%)",
+                }
+              : {}
+          }
+          className={`flex flex-col h-full rounded-b-xl py-6 px-0`}
         >
           {/* Header Section - Fixed Height */}
           <div className="text-center mb-6" style={{ minHeight: "120px" }}>
@@ -151,7 +160,7 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
           </div>
 
           {/* Product Image Section - Fixed Height */}
-          <div className="flex justify-center mb-6" >
+          <div className="flex justify-center mb-6">
             <div className="relative group/image flex items-center justify-center w-full h-full">
               <div
                 className={`absolute inset-0 ${
@@ -282,7 +291,11 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
 
             <div className="space-y-2">
               <div className="flex items-center justify-center space-x-3">
-                <span className={`line-through decoration-red-600  text-lg font-medium ${ borderColor === "red" ? "text-gray-400" :"text-gray-400"}`}>
+                <span
+                  className={`line-through decoration-red-600  text-lg font-medium ${
+                    borderColor === "red" ? "text-gray-400" : "text-gray-400"
+                  }`}
+                >
                   {originalPrice}
                 </span>
                 <span
