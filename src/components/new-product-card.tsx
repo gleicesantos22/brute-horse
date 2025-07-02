@@ -156,14 +156,14 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
                 {borderColor !== "red" && (
                   <h4
                     className={
-                      "block md:hidden text-red-600 font-extrabold italic text-2xl"
+                      "block md:hidden text-red-600 font-extrabold italic text-lg sm:text-2xl"
                     }
                   >
                     {badge.text}
                   </h4>
                 )}
                 <h3
-                  className={`text-3xl md:text-4xl font-[800] tracking-wide mb-0 ${getTextcolor()}`}
+                  className={`text-2xl sm:text-3xl md:text-4xl font-[800] tracking-wide mb-0 ${getTextcolor()}`}
                 >
                   {title}
                 </h3>
@@ -175,7 +175,7 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
               </div>
 
               {/* Product Image Section - Fixed Height */}
-              <div className="flex justify-center mb-6">
+              <div className="flex justify-center mb-0 sm:mb-6">
                 <div className="relative group/image flex items-center justify-center w-full h-full">
                   <div
                     className={`absolute inset-0 ${
@@ -187,8 +187,8 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
                   <img
                     src={image}
                     alt={`${title} Product`}
-                    className="relative max-h-full h-[200px] md:h-[300px] w-[300px] md:w-full object-contain transition-all duration-500"
-                    style={{ filter: "drop-shadow(2px 2px 4px #d3d3d3)" }}
+                    className="p-2 sm:p-0 relative max-h-full h-full md:h-[300px] w-[300px] md:w-full object-contain transition-all duration-500"
+                    style={{ filter: "drop-shadow(2px 2px 84px #d3d3d3)" }}
                   />
                   {borderColor === "yellow" && (
                     <div className="absolute inset-0 bg-gradient-to-t from-yellow-500/10 via-transparent to-orange-500/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -218,7 +218,7 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
                     {price}
                   </span>
                   <span
-                    className={`text-xl leading-[1.2] text-gray-900 ml-2 font-extrabold w-[20px] ${
+                    className={`text-sm sm:text-xl leading-[1.2] text-gray-900 ml-1 sm:ml-2 font-extrabold sm:w-[20px] ${
                       borderColor === "red" &&
                       "text-white [text-shadow:0px_2px_rgba(0,0,0,0.64)]"
                     }`}
@@ -241,7 +241,7 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
                   <div className="space-y-2 text-center">
                     <div
                       key={"index"}
-                      className={`py-2 flex items-center justify-center space-x-2 text-md text-center text-gray-700 
+                      className={`py-2 flex items-center justify-center space-x-1 sm:space-x-2 text-sm sm:text-md text-center text-gray-700 
                     border-y border-dashed 
                     ${
                       borderColor === "red"
@@ -257,7 +257,7 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
                         }`}
                       />
                       <span
-                        className={`font-[800] uppercase ${
+                        className={`font-[800] text-start uppercase ${
                           borderColor === "red"
                             ? "text-[#fccd15] [text-shadow:0px_2px_rgba(0,0,0,0.64)]"
                             : "text-red-600"
@@ -269,7 +269,7 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
                     {features.map((feature, index) => (
                       <div
                         key={index}
-                        className={`py-1 flex items-center justify-center space-x-2 text-md 
+                        className={`py-1 flex items-center justify-center space-x-1 sm:space-x-2 text-sm sm:text-md 
                       text-start md:text-center 
                       ${borderColor === "red" ? "text-white" : "text-gray-900"} 
                       border-b border-dashed ${
@@ -356,7 +356,7 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
                   </div>
 
                   <div
-                    className={`inline-block px-4 py-0 rounded-full font-bold text-lg ${shippingColors[shippingColor]}`}
+                    className={`inline-block px-0 sm:px-4 py-0 rounded-full font-bold text-md sm:text-lg ${shippingColors[shippingColor]}`}
                   >
                     {shipping}
                   </div>
@@ -374,7 +374,7 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
           </div>
 
           {/* CTA Button Section on small Screen - Fixed Height */}
-          <div className="block md:hidden mb-3 italic w-full p-2 py-4">
+          <div className="block md:hidden italic w-full p-2 py-4">
             <a
               href={link}
               className={`block w-full ${buttonStyles[buttonStyle]} text-xl transition-all duration-300 group/button text-center no-underline`}
