@@ -169,7 +169,7 @@ const productCards = [
     title: "6 Bottles",
     subtitle: "180 days supply",
     // image: "https://i.postimg.cc/zH3WNjBw/6BOTTLE.png",
-    image: "/images/small-6-v2.PNG",
+    image: "/images/small-6-v3.PNG",
     price: "49",
     savings: "YOU SAVE $600",
     features: ["Biggest Discount", "180 Days Guarantee"],

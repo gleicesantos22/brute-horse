@@ -1,5 +1,6 @@
 import React from "react";
 import { CheckCircle, ShoppingCart } from "lucide-react";
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 interface NewProductCardProps {
   badge: {
@@ -39,6 +40,7 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
   link,
   borderColor,
 }) => {
+  const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
   const badgeColors = {
     red: "bg-white",
     yellow: "bg-gray-200",
@@ -137,8 +139,9 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
             borderColor === "red"
               ? {
                   backgroundColor: "transparent",
-                  backgroundImage:
-                    "radial-gradient(at center top,rgb(34, 62, 136),rgb(34, 62, 136) 20%, #190000 100%)",
+                  backgroundImage: isSmallDevice
+                    ? "radial-gradient(at center left,rgb(34, 62, 136),rgb(34, 62, 136) 20%, #190000 100%)"
+                    : "radial-gradient(at center top,rgb(34, 62, 136),rgb(34, 62, 136) 20%, #190000 100%)",
                 }
               : {}
           }
@@ -185,6 +188,7 @@ const NewProductCard: React.FC<NewProductCardProps> = ({
                     src={image}
                     alt={`${title} Product`}
                     className="relative max-h-full h-[200px] md:h-[300px] w-[300px] md:w-full object-contain transition-all duration-500"
+                    style={{ filter: "drop-shadow(2px 2px 4px #d3d3d3)" }}
                   />
                   {borderColor === "yellow" && (
                     <div className="absolute inset-0 bg-gradient-to-t from-yellow-500/10 via-transparent to-orange-500/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
