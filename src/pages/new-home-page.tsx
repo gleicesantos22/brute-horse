@@ -179,7 +179,7 @@ const NewHomePage = () => {
       {/* Products Section */}
       <div>
         <div className="bg-black text-white py-4 mb-8">
-          <h2 className="text-2xl font-bold text-center mb-2">
+          <h2 className="text-2xl font-bold text-center mb-2 mt-4 mb-2 mt-4">
             Claim Your Discounted Brute Horse
             <br />
             Now While Supplies Last!
@@ -273,7 +273,7 @@ const NewHomePage = () => {
       {/* Product Section */}
       <div>
         <div className="bg-black text-white py-4 mb-8">
-          <h2 className="text-2xl font-bold text-center mb-2">
+          <h2 className="text-2xl font-bold text-center mb-2 mt-4">
             Claim Your Discounted Brute Horse
             <br />
             Now While Supplies Last!
@@ -302,7 +302,7 @@ const NewHomePage = () => {
       {/* Products Section */}
       <div>
         <div className="bg-black text-white py-4 mb-8">
-          <h2 className="text-2xl font-bold text-center mb-2">
+          <h2 className="text-2xl font-bold text-center mb-2 mt-4">
             Claim Your Discounted Brute Horse
             <br />
             Now While Supplies Last!
