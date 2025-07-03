@@ -56,7 +56,7 @@ const productCards = [
     title: "1 Bottle",
     subtitle: "30 days supply",
     // image: "https://i.imgur.com/ojDbZ0n.png",
-    image: "/images/small-1.png",
+    image: "/images/small-bottle.png",
     price: "79",
     savings: "YOU SAVE $240",
     features: ["180 Days Guarantee"],
