@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --custom-card-bg: #fbfbfb;
+  --custom-bg-toast: #23418f;
+  --primary-color-light: #dcdcdc;
+  --custom-primary-color: #23418f;
+  --custom-secondary-color: #fccd15;
+  --custom-third-color: #000;
+  --custom-fourth-color: #ff0000;
+}

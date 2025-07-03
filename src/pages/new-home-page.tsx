@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import NewProductCard from "../components/new-product-card";
 import { Accordion } from "../components/ui/Accordian";
 import { Triangle } from "lucide-react";
+import ProductsSection from "../sections/ProductsSection";
 
 const researchCitations = [
   {
@@ -247,13 +248,7 @@ const NewHomePage = () => {
             <Triangle className="rotate-180 h-16 w-16 absolute -top-2 text-white" />
           </div>
         </div>
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {productCards.map((card, index) => (
-              <NewProductCard key={index} {...card} />
-            ))}
-          </div>
-        </div>
+        <ProductsSection />
       </div>
       {/* Satisfaction gaurantee */}
       <div
@@ -345,13 +340,7 @@ const NewHomePage = () => {
             <Triangle className="rotate-180 h-16 w-16 absolute -top-2 text-white" />
           </div>
         </div>
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {productCards.map((card, index) => (
-              <NewProductCard key={index} {...card} />
-            ))}
-          </div>
-        </div>
+        <ProductsSection />
       </div>
 
       {/* FAQ Section */}
@@ -380,13 +369,7 @@ const NewHomePage = () => {
             <Triangle className="rotate-180 h-16 w-16 absolute -top-2 text-white" />
           </div>
         </div>
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {productCards.map((card, index) => (
-              <NewProductCard key={index} {...card} />
-            ))}
-          </div>
-        </div>
+        <ProductsSection />
       </div>
 
       {/* // Scientific refrence section  */}
