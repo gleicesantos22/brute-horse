@@ -8,6 +8,7 @@ import ShippingPolicy from './pages/ShippingPolicy';
 import RefundPolicy from './pages/RefundPolicy';
 import ContactUs from './pages/ContactUs';
 import NewHomePage from './pages/new-home-page';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function App() {
   return (
