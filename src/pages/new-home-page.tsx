@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import NewProductCard from "../components/new-product-card";
 import { Accordion } from "../components/ui/Accordian";
 import { Triangle } from "lucide-react";
+import ProductsSection from "../sections/ProductsSection";
 
 const researchCitations = [
   {
@@ -151,7 +152,7 @@ const productCards = [
     title: "3 Bottles",
     subtitle: "90 days supply",
     // image: "https://i.imgur.com/gTcOoJ7.png",
-    image: "/images/small-bottle-3.PNG",
+    image: "/images/small-3-v2.PNG",
     price: "69",
     savings: "YOU SAVE $300",
     features: ["180 Days Guarantee"],
@@ -169,7 +170,7 @@ const productCards = [
     title: "6 Bottles",
     subtitle: "180 days supply",
     // image: "https://i.postimg.cc/zH3WNjBw/6BOTTLE.png",
-    image: "/images/small-bottle-6.PNG",
+    image: "/images/small-6-v3.PNG",
     price: "49",
     savings: "YOU SAVE $600",
     features: ["Biggest Discount", "180 Days Guarantee"],
@@ -187,7 +188,7 @@ const productCards = [
     title: "1 Bottle",
     subtitle: "30 days supply",
     // image: "https://i.imgur.com/ojDbZ0n.png",
-    image: "/images/small-bottle-1.PNG",
+    image: "/images/small-1.png",
     price: "79",
     savings: "YOU SAVE $240",
     features: ["180 Days Guarantee"],
@@ -247,13 +248,7 @@ const NewHomePage = () => {
             <Triangle className="rotate-180 h-16 w-16 absolute -top-2 text-white" />
           </div>
         </div>
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {productCards.map((card, index) => (
-              <NewProductCard key={index} {...card} />
-            ))}
-          </div>
-        </div>
+        <ProductsSection />
       </div>
       {/* Satisfaction gaurantee */}
       <div
@@ -345,13 +340,7 @@ const NewHomePage = () => {
             <Triangle className="rotate-180 h-16 w-16 absolute -top-2 text-white" />
           </div>
         </div>
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {productCards.map((card, index) => (
-              <NewProductCard key={index} {...card} />
-            ))}
-          </div>
-        </div>
+        <ProductsSection />
       </div>
 
       {/* FAQ Section */}
@@ -380,13 +369,7 @@ const NewHomePage = () => {
             <Triangle className="rotate-180 h-16 w-16 absolute -top-2 text-white" />
           </div>
         </div>
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {productCards.map((card, index) => (
-              <NewProductCard key={index} {...card} />
-            ))}
-          </div>
-        </div>
+        <ProductsSection />
       </div>
 
       {/* // Scientific refrence section  */}
