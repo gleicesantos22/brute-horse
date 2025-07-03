@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import NewProductCard from "../components/new-product-card";
 import { Accordion } from "../components/ui/Accordian";
 import { Triangle } from "lucide-react";
 import ProductsSection from "../sections/ProductsSection";
@@ -146,63 +145,6 @@ const researchCitations = [
   },
 ];
 
-const productCards = [
-  {
-    badge: { text: "POPULAR", color: "blue" as const },
-    title: "3 Bottles",
-    subtitle: "90 days supply",
-    // image: "https://i.imgur.com/gTcOoJ7.png",
-    image: "/images/small-3-v2.PNG",
-    price: "69",
-    savings: "YOU SAVE $300",
-    features: ["180 Days Guarantee"],
-    buttonText: "Secure Order",
-    buttonStyle: "secondary" as const,
-    originalPrice: "$300",
-    finalPrice: "$207",
-    shipping: "+ FREE SHIPPING",
-    shippingColor: "green" as const,
-    link: "https://lucas-digitalbr.mycartpanda.com/checkout/188274332:1",
-    borderColor: "blue" as const,
-  },
-  {
-    badge: { text: "BEST VALUE", color: "red" as const },
-    title: "6 Bottles",
-    subtitle: "180 days supply",
-    // image: "https://i.postimg.cc/zH3WNjBw/6BOTTLE.png",
-    image: "/images/small-6-v3.PNG",
-    price: "49",
-    savings: "YOU SAVE $600",
-    features: ["Biggest Discount", "180 Days Guarantee"],
-    buttonText: "Secure Order",
-    buttonStyle: "primary" as const,
-    originalPrice: "$594",
-    finalPrice: "$294",
-    shipping: "+ FREE SHIPPING",
-    shippingColor: "yellow" as const,
-    link: "https://lucas-digitalbr.mycartpanda.com/checkout/188274365:1",
-    borderColor: "red" as const,
-  },
-  {
-    badge: { text: "STARTER", color: "gray" as const },
-    title: "1 Bottle",
-    subtitle: "30 days supply",
-    // image: "https://i.imgur.com/ojDbZ0n.png",
-    image: "/images/small-1.png",
-    price: "79",
-    savings: "YOU SAVE $240",
-    features: ["180 Days Guarantee"],
-    buttonText: "Secure Order",
-    buttonStyle: "secondary" as const,
-    originalPrice: "$198",
-    finalPrice: "$79",
-    shipping: "+ $9.95 SHIPPING",
-    shippingColor: "blue" as const,
-    link: "https://lucas-digitalbr.mycartpanda.com/checkout/188271611:1",
-    borderColor: "gray" as const,
-  },
-];
-
 const faqQuestions = [
   {
     title: "How Many Bottles of Brute Horse Should I Order?",
@@ -232,8 +174,10 @@ const faqQuestions = [
 ];
 
 const NewHomePage = () => {
+
   return (
     <>
+    
       {/* Products Section */}
       <div>
         <div className="bg-black text-white py-4 mb-8">
@@ -256,10 +200,10 @@ const NewHomePage = () => {
           boxShadow:
             "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset",
         }}
-        className="bg-[url('/images/guarantee-bg.webp')] bg-cover bg-white bg-no-repeat"
+        // className="bg-[url('/images/guarantee-bg.webp')] bg-cover bg-white bg-no-repeat"
       >
         <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
-          <div className="flex flex-col md:flex-row gap-4 items-center p-8 md:p-10 ">
+          <div className="flex flex-col md:flex-row gap-4 items-center p-8 md:p-10 border-2 border-gray-900 rounded-2xl bg-gray-100">
             <img
               src="/images/money-back-guarantee.webp"
               className="h-[200px] w-[200px] md:h-[300px] md:w-[300px] object-contain"
@@ -344,7 +288,7 @@ const NewHomePage = () => {
       </div>
 
       {/* FAQ Section */}
-      <div className="bg-[url('/images/faq-bg.webp')] bg-cover bg-center">
+      <div className="bg-[url('/images/faq-bg.webp')] bg-cover bg-center h-[600px]">
         <div className="py-10 px-10">
           <h1 className="text-2xl md:text-4xl font-bold text-center text-gray-100 mb-8 leading-tight tracking-tight">
             Frequently Asked Questions
