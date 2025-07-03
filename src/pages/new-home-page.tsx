@@ -174,10 +174,8 @@ const faqQuestions = [
 ];
 
 const NewHomePage = () => {
-
   return (
     <>
-    
       {/* Products Section */}
       <div>
         <div className="bg-black text-white py-4 mb-8">
@@ -196,74 +194,76 @@ const NewHomePage = () => {
       </div>
       {/* Satisfaction gaurantee */}
       <div
-        style={{
-          boxShadow:
-            "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset",
-        }}
-        // className="bg-[url('/images/guarantee-bg.webp')] bg-cover bg-white bg-no-repeat"
+        // style={{
+        //   boxShadow:
+        //     "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset",
+        // }}
+        className="bg-[url('/images/guarantee-bg.webp')] bg-cover bg-white bg-no-repeat"
       >
-        <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
-          <div className="flex flex-col md:flex-row gap-4 items-center p-8 md:p-10 border-2 border-gray-900 rounded-2xl bg-gray-100">
-            <img
-              src="/images/money-back-guarantee.webp"
-              className="h-[200px] w-[200px] md:h-[300px] md:w-[300px] object-contain"
-              alt="registered"
-            />
+        <div className="bg-[rgb(255,255,255,0.3)] backdrop-opacity-10 h-full w-full bg-red-400">
+          <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
+            <div className="flex flex-col md:flex-row gap-4 items-center p-8 md:p-10 ">
+              <img
+                src="/images/money-back-guarantee.webp"
+                className="h-[200px] w-[200px] md:h-[300px] md:w-[300px] object-contain"
+                alt="registered"
+              />
 
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 leading-tight">
-                We're so confident Brute Horse will reignite your vitality, we
-                back it with a{" "}
-                <span className="text-blue-600">
-                  100% satisfaction guarantee
-                </span>{" "}
-                for 60 days.
-              </h2>
-              <div className="space-y-4 text-gray-700 text-base md:text-lg">
-                <p>
-                  Start using Brute Horse as soon as it arrives, and within days
-                  you might notice enhanced energy, improved stamina, and a
-                  stronger sense of confidence. Over time, as your body adjusts
-                  to the natural formula, you could experience firmer, more
-                  consistent performance and a renewed sense of intimacy in your
-                  relationships.
-                </p>
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-6 leading-tight">
+                  We're so confident Brute Horse will reignite your vitality, we
+                  back it with a{" "}
+                  <span className="text-blue-800 underline font-extrabold uppercase tracking-auto">
+                    100% satisfaction guarantee
+                  </span>{" "}
+                  for 60 days.
+                </h2>
+                <div className="space-y-4 text-gray-900 text-base md:text-lg font-[400]">
+                  <p>
+                    Start using Brute Horse as soon as it arrives, and within
+                    days you might notice enhanced energy, improved stamina, and
+                    a stronger sense of confidence. Over time, as your body
+                    adjusts to the natural formula, you could experience firmer,
+                    more consistent performance and a renewed sense of intimacy
+                    in your relationships.
+                  </p>
 
-                <p>
-                  This is your opportunity to track your transformation—whether
-                  it's regaining the energy for date nights, feeling revitalized
-                  during your workouts, or simply rediscovering the confidence
-                  you thought was gone.
-                </p>
+                  <p>
+                    This is your opportunity to track your
+                    transformation—whether it's regaining the energy for date
+                    nights, feeling revitalized during your workouts, or simply
+                    rediscovering the confidence you thought was gone.
+                  </p>
 
-                <p className="font-medium">
-                  If after several weeks or even months you're not completely
-                  satisfied with your results, we'll refund your money in
-                  full—no questions asked. With Brute Horse, you're not just
-                  taking control of your vitality—you're taking control of your
-                  life.
-                </p>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 !mt-20">
-                  <img
-                    src="/images/gmp-certified.webp"
-                    className="h-full w-full object-contain"
-                    alt="gmp-certified"
-                  />
-                  <img
-                    src="/images/natural-formula.webp"
-                    className="h-full w-full object-contain"
-                    alt="natural-formula"
-                  />
-                  <img
-                    src="/images/made-in-usa.webp"
-                    className="h-full w-full object-contain"
-                    alt="made-in-usa"
-                  />
-                  <img
-                    src="/images/fda-registered-facility.webp"
-                    className="h-full w-full object-contain"
-                    alt="fda-registered-facility"
-                  />
+                  <p className="font-medium">
+                    If after several weeks or even months you're not completely
+                    satisfied with your results, we'll refund your money in
+                    full—no questions asked. With Brute Horse, you're not just
+                    taking control of your vitality—you're taking control of
+                    your life.
+                  </p>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-8 !mt-12 md:!mt-20">
+                    <img
+                      src="/images/gmp-certified.webp"
+                      className="h-full w-full object-contain"
+                      alt="gmp-certified"
+                    />
+                    <img
+                      src="/images/natural-formula.webp"
+                      className="h-full w-full object-contain"
+                      alt="natural-formula"
+                    />
+                    <img
+                      src="/images/made-in-usa.webp"
+                      className="h-full w-full object-contain"
+                      alt="made-in-usa"
+                    />
+                    <img
+                      src="/images/fda-registered-facility.webp"
+                      className="h-full w-full object-contain"
+                      alt="fda-registered-facility"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -288,7 +288,7 @@ const NewHomePage = () => {
       </div>
 
       {/* FAQ Section */}
-      <div className="bg-[url('/images/faq-bg.webp')] bg-cover bg-center h-[600px]">
+      <div className="bg-[url('/images/faq-bg.webp')] bg-cover bg-center ">
         <div className="py-10 px-10">
           <h1 className="text-2xl md:text-4xl font-bold text-center text-gray-100 mb-8 leading-tight tracking-tight">
             Frequently Asked Questions
