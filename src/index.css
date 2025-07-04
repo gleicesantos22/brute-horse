@@ -11,3 +11,13 @@
   --custom-third-color: #000;
   --custom-fourth-color: #ff0000;
 }
+/* Removed the loading state of the video & the loading percentage will be disabled */
+#loading_686731ada8708dbefeb5541f { 
+  display: none !important;
+  background-color: green;
+  content: "";
+}
+/* Adding color to the wapper of the percentage */
+.preload {
+  background-color: black;
+}
