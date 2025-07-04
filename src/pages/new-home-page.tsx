@@ -311,15 +311,15 @@ const NewHomePage = () => {
     <>
       <div className="py-10 px-4 text-center bg-black">
         <div className="max-w-4xl mx-auto">
-          <h3 className="text-white font-serif font-bold text-[1.6em] my-[10px]">
+          <h3 className="text-white font-serif font-bold text-md md:text-xl my-[10px]">
             El doctor más caliente del porno revela:
           </h3>
-          <h1 className="text-white font-serif font-bold text-[2.5em] my-[10px] inline leading-tight">
+          <h1 className="text-white font-serif font-bold text-2xl md:text-4xl my-[10px] inline leading-tight">
             El truco del caballo despierta
             <span className="text-[#E02222]">
               "erecciones animales en 6h"
             </span>{" "}
-            is All y ya salvó a más de 27.000 hombres casados
+            y ya salvó a más de 27.000 hombres casados
           </h1>
         </div>
       </div>
