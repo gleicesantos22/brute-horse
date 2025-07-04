@@ -347,7 +347,7 @@ const NewHomePage = () => {
         // }}
         className="hidden-section hidden bg-[url('/images/guarantee-bg.webp')] bg-cover bg-white bg-no-repeat"
       >
-        <div className="bg-[rgb(255,255,255,0.3)] backdrop-opacity-10 h-full w-full">
+        <div className="bg-[rgb(255,255,255,0.6)] backdrop-opacity-10 h-full w-full">
           <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
             <div className="flex flex-col md:flex-row gap-4 items-center p-8 md:p-10 ">
               <img
