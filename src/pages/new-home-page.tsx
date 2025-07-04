@@ -1,111 +1,96 @@
 import { Link } from "react-router-dom";
 import { Accordion } from "../components/ui/Accordian";
 import { Triangle } from "lucide-react";
-import ProductsSection from "../sections/ProductsSection";
+import { ProductsSection } from "../sections";
 
 const researchCitations = [
   {
     id: 1,
-    title:
-      "Oral L-Citrulline Supplementation Improves Erection Hardness in Men with Mild Erectile Dysfunction",
+    title: "Oral L-Citrulline Supplementation Improves Erection Hardness in Men with Mild Erectile Dysfunction",
     author: "Stanislavov R, et al.",
     journal: "Urology, 2011",
   },
   {
     id: 2,
-    title:
-      "L-Citrulline and Erectile Dysfunction: A Systematic Review of Its Potential Benefits",
+    title: "L-Citrulline and Erectile Dysfunction: A Systematic Review of Its Potential Benefits",
     author: "Cormio L, et al.",
     journal: "International Journal of Impotence Research, 2015",
   },
   {
     id: 3,
-    title:
-      "The Efficacy of Acetyl-L-Carnitine in Combination with Sildenafil for Erectile Dysfunction After Radical Prostatectomy",
+    title: "The Efficacy of Acetyl-L-Carnitine in Combination with Sildenafil for Erectile Dysfunction After Radical Prostatectomy",
     author: "Cavallini G, et al.",
     journal: "BJU International, 2005",
   },
   {
     id: 4,
-    title:
-      "L-Carnitine and Erectile Function: Mechanisms of Action in Vascular Health",
+    title: "L-Carnitine and Erectile Function: Mechanisms of Action in Vascular Health",
     author: "Lenzi A, et al.",
     journal: "Translational Andrology and Urology, 2016",
   },
   {
     id: 5,
-    title:
-      "Efficacy and Safety of Pycnogenol and L-Arginine in Improving Erectile Function",
+    title: "Efficacy and Safety of Pycnogenol and L-Arginine in Improving Erectile Function",
     author: "Stanislavov R, et al.",
     journal: "Journal of Sex & Marital Therapy, 2003",
   },
   {
     id: 6,
-    title:
-      "Pine Bark Extract and Male Fertility: Evidence for Improved Sperm Function and Circulation",
+    title: "Pine Bark Extract and Male Fertility: Evidence for Improved Sperm Function and Circulation",
     author: "Roseff SJ",
     journal: "Journal of Reproductive Medicine, 2002",
   },
   {
     id: 7,
-    title:
-      "The Role of Mucuna Pruriens in Improving Sexual Function and Reducing Stress",
+    title: "The Role of Mucuna Pruriens in Improving Sexual Function and Reducing Stress",
     author: "Gupta A, et al.",
     journal: "Fertility and Sterility, 2010",
   },
   {
     id: 8,
-    title:
-      "Velvet Bean (Mucuna Pruriens) and Testosterone: Effects on Sexual Behavior in Men",
+    title: "Velvet Bean (Mucuna Pruriens) and Testosterone: Effects on Sexual Behavior in Men",
     author: "Shukla KK, et al.",
     journal: "Andrologia, 2012",
   },
   {
     id: 9,
-    title:
-      "Maca Root as a Natural Aphrodisiac: Effects on Sexual Desire in Healthy Men",
+    title: "Maca Root as a Natural Aphrodisiac: Effects on Sexual Desire in Healthy Men",
     author: "Gonzales GF, et al.",
     journal: "Andrologia, 2002",
   },
   {
     id: 10,
-    title:
-      "The Efficacy of Maca Root in Alleviating Sexual Dysfunction Induced by Antidepressants",
+    title: "The Efficacy of Maca Root in Alleviating Sexual Dysfunction Induced by Antidepressants",
     author: "Dording CM, et al.",
     journal: "CNS Neuroscience & Therapeutics, 2008",
   },
   {
     id: 11,
-    title:
-      "Effects of Grape Polyphenols on Vascular Health and Erectile Dysfunction",
+    title: "Effects of Grape Polyphenols on Vascular Health and Erectile Dysfunction",
     author: "Georgiev V, et al.",
     journal: "Molecular Nutrition & Food Research, 2014",
   },
   {
     id: 12,
-    title:
-      "Antioxidant Properties of Grape Seed Extract and Its Role in Improving Blood Flow",
+    title: "Antioxidant Properties of Grape Seed Extract and Its Role in Improving Blood Flow",
     author: "Bagchi D, et al.",
     journal: "Toxicology, 2002",
   },
   {
     id: 13,
-    title:
-      "Saffron for Erectile Dysfunction: A Randomized, Double-Blind, Placebo-Controlled Study",
+    title: "Saffron for Erectile Dysfunction: A Randomized, Double-Blind, Placebo-Controlled Study",
     author: "Hosseinzadeh H, et al.",
     journal: "Phytomedicine, 2009",
   },
   {
     id: 14,
-    title:
-      "Saffron Extract and Sexual Function in Men with Erectile Dysfunction",
+    title: "Saffron Extract and Sexual Function in Men with Erectile Dysfunction",
     author: "Kashani L, et al.",
     journal: "Human Psychopharmacology, 2013",
   },
   {
     id: 15,
-    title:
-      "Zinc Supplementation and Its Effect on Sexual Performance and Testosterone Levels",
+    title: "Zinc Supplementation and Its Effect on Sexual Performance and Testosterone Levels",
     author: "Prasad AS",
     journal: "Nutrition, 1996",
   },
@@ -117,29 +102,25 @@ const researchCitations = [
   },
   {
     id: 17,
-    title:
-      "Vitamin B3 (Niacin) Improves Erectile Function in Men with Dyslipidemia",
+    title: "Vitamin B3 (Niacin) Improves Erectile Function in Men with Dyslipidemia",
     author: "Ng CF, et al.",
     journal: "Journal of Sexual Medicine, 2011",
   },
   {
     id: 18,
-    title:
-      "The Role of Niacin in Enhancing Penile Blood Flow and Reducing Erectile Dysfunction Symptoms",
+    title: "The Role of Niacin in Enhancing Penile Blood Flow and Reducing Erectile Dysfunction Symptoms",
     author: "Sato K, et al.",
     journal: "Vascular Health and Risk Management, 2008",
   },
   {
     id: 19,
-    title:
-      "Natural Therapies for Erectile Dysfunction: A Review of Clinical Evidence",
+    title: "Natural Therapies for Erectile Dysfunction: A Review of Clinical Evidence",
     author: "Shamloul R, et al.",
     journal: "Journal of Sexual Medicine, 2013",
   },
   {
     id: 20,
-    title:
-      "The Impact of Antioxidants on Male Reproductive Health: Focus on Grape Seed Extract",
+    title: "The Impact of Antioxidants on Male Reproductive Health: Focus on Grape Seed Extract",
     author: "Elia J, et al.",
     journal: "Antioxidants, 2019",
   },
@@ -148,28 +129,23 @@ const researchCitations = [
 const faqQuestions = [
   {
     title: "How Many Bottles of Brute Horse Should I Order?",
-    description:
-      "For best results, use Brute Horse consistently for 3 to 6 months. That’s why we recommend ordering 3 to 6 bottles to support your full transformation.",
+    description: "For best results, use Brute Horse consistently for 3 to 6 months. That's why we recommend ordering 3 to 6 bottles to support your full transformation.",
   },
   {
     title: "Is Brute Horse Safe to Use Daily?",
-    description:
-      "Yes. Brute Horse is made from natural, clinically tested ingredients and manufactured in a GMP-certified, FDA-registered facility in the USA.",
+    description: "Yes. Brute Horse is made from natural, clinically tested ingredients and manufactured in a GMP-certified, FDA-registered facility in the USA.",
   },
   {
     title: "When Will I See Results After Taking Brute Horse?",
-    description:
-      "Most users report feeling increased energy and stamina within the first few weeks. Full benefits are typically seen after consistent use over 2–3 months.",
+    description: "Most users report feeling increased energy and stamina within the first few weeks. Full benefits are typically seen after consistent use over 2–3 months.",
   },
   {
-    title: "How Do I Get a Refund if I’m Not Satisfied?",
-    description:
-      "Simply contact our support team within 180 days of your purchase and we’ll process your refund—no questions asked.",
+    title: "How Do I Get a Refund if I'm Not Satisfied?",
+    description: "Simply contact our support team within 180 days of your purchase and we'll process your refund—no questions asked.",
   },
   {
     title: "Is Brute Horse a One-Time Payment?",
-    description:
-      "Yes. There are no subscriptions or auto-billing. You pay once and receive your bottles with no future charges.",
+    description: "Yes. There are no subscriptions or auto-billing. You pay once and receive your bottles with no future charges.",
   },
 ];
 
@@ -192,14 +168,9 @@ const NewHomePage = () => {
         </div>
         <ProductsSection />
       </div>
-      {/* Satisfaction gaurantee */}
-      <div
-        // style={{
-        //   boxShadow:
-        //     "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset",
-        // }}
-        className="bg-[url('/images/guarantee-bg.webp')] bg-cover bg-white bg-no-repeat"
-      >
+
+      {/* Satisfaction guarantee */}
+      <div className="bg-[url('/images/guarantee-bg.webp')] bg-cover bg-white bg-no-repeat">
         <div className="bg-[rgb(255,255,255,0.3)] backdrop-opacity-10 h-full w-full bg-red-400">
           <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
             <div className="flex flex-col md:flex-row gap-4 items-center p-8 md:p-10 ">
@@ -270,6 +241,7 @@ const NewHomePage = () => {
           </div>
         </div>
       </div>
+
       {/* Product Section */}
       <div>
         <div className="bg-black text-white py-4 mb-8">
@@ -316,7 +288,7 @@ const NewHomePage = () => {
         <ProductsSection />
       </div>
 
-      {/* // Scientific refrence section  */}
+      {/* Scientific reference section */}
       <div
         className="py-20 bg-gray-100"
         style={{
@@ -398,32 +370,32 @@ const NewHomePage = () => {
         </div>
       </div>
 
-      {/* Footer Section  */}
+      {/* Footer Section */}
       <footer className="bg-black text-gray-100 py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Navigation Links */}
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-6">
-            <Link to="/" className="font-bold hover:text-red-400">
+            <Link to="/contact-us" className="font-bold hover:text-red-400">
               Contact
             </Link>
 
-            <Link to="/" className="font-bold hover:text-red-400">
+            <Link to="/terms-of-service" className="font-bold hover:text-red-400">
               Terms
             </Link>
 
-            <Link to="/" className="font-bold hover:text-red-400">
+            <Link to="/privacy-policy" className="font-bold hover:text-red-400">
               Privacy
             </Link>
 
-            <Link to="/" className="font-bold hover:text-red-400">
+            <Link to="/return-policy" className="font-bold hover:text-red-400">
               Return Policy
             </Link>
 
-            <Link to="/" className="font-bold hover:text-red-400">
+            <Link to="/shipping-policy" className="font-bold hover:text-red-400">
               Shipping
             </Link>
 
-            <Link to="/" className="font-bold hover:text-red-400">
+            <Link to="/refund-policy" className="font-bold hover:text-red-400">
               Disclaimer
             </Link>
 
@@ -487,11 +459,11 @@ const NewHomePage = () => {
 
           {/* Support Links */}
           <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 mb-6">
-            <Link to={"/"}>
+            <Link to="/contact-us">
               For Product Support, please contact the vendor HERE.
             </Link>
 
-            <Link to={"/"}>
+            <Link to="/contact-us">
               For Order Support, please contact ClickBank HERE.
             </Link>
           </div>
