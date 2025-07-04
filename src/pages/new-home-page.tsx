@@ -148,35 +148,33 @@ const researchCitations = [
 
 const faqQuestions = [
   {
-    title: "How Many Bottles of Brute Horse Should I Order?",
+    title: "¿Cuántos frascos de Brute Horse debo pedir?",
     description:
-      "For best results, use Brute Horse consistently for 3 to 6 months. That’s why we recommend ordering 3 to 6 bottles to support your full transformation.",
+      "Para obtener los mejores resultados, usa Brute Horse de forma constante durante 3 a 6 meses. Por eso recomendamos pedir de 3 a 6 frascos para apoyar tu transformación completa.",
   },
   {
-    title: "Is Brute Horse Safe to Use Daily?",
+    title: "¿Es seguro usar Brute Horse todos los días?",
     description:
-      "Yes. Brute Horse is made from natural, clinically tested ingredients and manufactured in a GMP-certified, FDA-registered facility in the USA.",
+      "Sí. Brute Horse está elaborado con ingredientes naturales probados clínicamente y fabricado en una instalación registrada por la FDA y certificada por GMP en EE.UU. Es 100% seguro para el uso diario — miles de hombres ya lo están tomando sin efectos secundarios.",
   },
   {
-    title: "When Will I See Results After Taking Brute Horse?",
+    title: "¿Cuándo veré resultados después de tomar Brute Horse?",
     description:
-      "Most users report feeling increased energy and stamina within the first few weeks. Full benefits are typically seen after consistent use over 2–3 months.",
+      "La mayoría de los usuarios reporta mayor energía y resistencia durante las primeras semanas. Los beneficios completos suelen notarse tras 2 a 3 meses de uso constante.",
   },
   {
-    title: "How Do I Get a Refund if I’m Not Satisfied?",
+    title: "¿Cómo solicito un reembolso si no estoy satisfecho?",
     description:
-      "Simply contact our support team within 180 days of your purchase and we’ll process your refund—no questions asked.",
+      "Simplemente contacta con nuestro equipo de soporte dentro de los 180 días de tu compra y procesaremos tu reembolso — sin preguntas.",
   },
   {
-    title: "Is Brute Horse a One-Time Payment?",
+    title: "¿Brute Horse es un pago único?",
     description:
-      "Yes. There are no subscriptions or auto-billing. You pay once and receive your bottles with no future charges.",
+      "Sí. No hay suscripciones ni cobros automáticos. Pagas una sola vez y recibes tus frascos sin cargos futuros.",
   },
 ];
 
 const NewHomePage = () => {
-
-
   useEffect(() => {
     const script = document.createElement("script");
     script.src =
@@ -299,7 +297,7 @@ const NewHomePage = () => {
       <div>
         <div className="bg-black text-white py-4 mb-8">
           <h2 className="text-2xl font-bold text-center mb-2 mt-4 mb-2 mt-4">
-           Últimas unidades de BRUTE HORSE disponibles
+            Últimas unidades de BRUTE HORSE disponibles
           </h2>
 
           <div className="relative h-8 flex items-center justify-center animate-bounce">
@@ -328,36 +326,33 @@ const NewHomePage = () => {
 
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold mb-6 leading-tight">
-                  We're so confident Brute Horse will reignite your vitality, we
-                  back it with a{" "}
-                  <span className="text-blue-800 underline font-extrabold uppercase tracking-auto">
-                    100% satisfaction guarantee
-                  </span>{" "}
-                  for 60 days.
+                  Estamos tan seguros de que Brute Horse reactivará tu
+                  virilidad, que lo respaldamos con una garantía de satisfacción
+                  del 100% por 60 días
                 </h2>
-                <div className="space-y-4 text-gray-900 text-base md:text-lg font-[400]">
+                <div className="space-y-4 text-gray-800 text-base md:text-lg font-[400]">
                   <p>
-                    Start using Brute Horse as soon as it arrives, and within
-                    days you might notice enhanced energy, improved stamina, and
-                    a stronger sense of confidence. Over time, as your body
-                    adjusts to the natural formula, you could experience firmer,
-                    more consistent performance and a renewed sense of intimacy
-                    in your relationships.
+                    Comienza a usar Brute Horse en cuanto lo recibas y, en pocos
+                    días, podrías notar más energía, mayor resistencia y una
+                    confianza masculina renovada. Con el tiempo, a medida que tu
+                    cuerpo se adapta a la fórmula natural, podrías experimentar
+                    erecciones más firmes, duraderas y una conexión íntima mucho
+                    más intensa con tu pareja.
                   </p>
 
                   <p>
-                    This is your opportunity to track your
-                    transformation—whether it's regaining the energy for date
-                    nights, feeling revitalized during your workouts, or simply
-                    rediscovering the confidence you thought was gone.
+                    Esta es tu oportunidad de transformarte por completo — ya
+                    sea para recuperar la potencia en las noches de pasión,
+                    sentirte con energía durante los entrenamientos, o volver a
+                    ser el hombre seguro que eras antes.
                   </p>
 
                   <p className="font-medium">
-                    If after several weeks or even months you're not completely
-                    satisfied with your results, we'll refund your money in
-                    full—no questions asked. With Brute Horse, you're not just
-                    taking control of your vitality—you're taking control of
-                    your life.
+                    Si después de varias semanas o incluso meses no estás
+                    completamente satisfecho con los resultados, te devolvemos
+                    el dinero sin hacer preguntas. Con Brute Horse, no solo
+                    estás recuperando tu virilidad — estás recuperando el
+                    control de tu vida.
                   </p>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-8 !mt-12 md:!mt-20">
                     <img
@@ -391,7 +386,7 @@ const NewHomePage = () => {
       <div>
         <div className="bg-black text-white py-4 mb-8">
           <h2 className="text-2xl font-bold text-center mb-2 mt-4">
-           Últimas unidades de BRUTE HORSE disponibles
+            Últimas unidades de BRUTE HORSE disponibles
           </h2>
 
           <div className="relative h-8 flex items-center justify-center animate-bounce">
@@ -406,7 +401,7 @@ const NewHomePage = () => {
       <div className="bg-[url('/images/faq-bg.webp')] bg-cover bg-center ">
         <div className="py-10 px-10">
           <h1 className="text-2xl md:text-4xl font-bold text-center text-gray-100 mb-8 leading-tight tracking-tight">
-            Frequently Asked Questions
+            Preguntas Frecuentes
           </h1>
           <div className="max-w-6xl mx-auto">
             <Accordion items={faqQuestions} allowMultipleOpen={false} />
@@ -418,7 +413,7 @@ const NewHomePage = () => {
       <div>
         <div className="bg-black text-white py-4 mb-8">
           <h2 className="text-2xl font-bold text-center mb-2 mt-4">
-           Últimas unidades de BRUTE HORSE disponibles
+            Últimas unidades de BRUTE HORSE disponibles
           </h2>
 
           <div className="relative h-8 flex items-center justify-center animate-bounce">
@@ -438,7 +433,7 @@ const NewHomePage = () => {
         }}
       >
         <h1 className="text-4xl md:text-6xl font-bold text-center text-gray-900 mb-8 leading-tight tracking-tight">
-          Scientific References
+          Referencias Científicas
         </h1>
         <div className="md:max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 p-6 md:px-12">
           <ul className="text-sm font-normal space-y-4">
@@ -512,9 +507,9 @@ const NewHomePage = () => {
       </div>
 
       {/* Footer Section  */}
-      <footer className="bg-black text-gray-100 py-8 px-4 sm:px-6 lg:px-8">
+      {/* <footer className="bg-black text-gray-100 py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          {/* Navigation Links */}
+          
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-6">
             <Link to="/" className="font-bold hover:text-red-400">
               Contact
@@ -545,14 +540,14 @@ const NewHomePage = () => {
             </Link>
           </div>
 
-          {/* FDA Disclaimer */}
+         
           <p className="text-center mb-6 italic">
             Statements on this website have not been evaluated by the Food and
             Drug Administration. Products are not intended to diagnose, treat,
             cure or prevent any disease.
           </p>
 
-          {/* Main Disclaimer */}
+         
           <div className="space-y-4 mb-6 text-sm text-center">
             <p>
               The website's content and the product for sale is based upon the
@@ -585,7 +580,6 @@ const NewHomePage = () => {
             </p>
           </div>
 
-          {/* ClickBank Notice */}
           <div className="mb-6 text-sm">
             <p>
               ClickBank is the retailer of products on this site. CLICKBANK® is
@@ -598,7 +592,6 @@ const NewHomePage = () => {
             </p>
           </div>
 
-          {/* Support Links */}
           <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 mb-6">
             <Link to={"/"}>
               For Product Support, please contact the vendor HERE.
@@ -609,12 +602,11 @@ const NewHomePage = () => {
             </Link>
           </div>
 
-          {/* Copyright */}
           <p className="text-center">
             © Brute Horce Research 2025. All Rights Reserved.
           </p>
         </div>
-      </footer>
+      </footer> */}
     </>
   );
 };
