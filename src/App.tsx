@@ -7,7 +7,7 @@ import ReturnPolicy from './pages/ReturnPolicy';
 import ShippingPolicy from './pages/ShippingPolicy';
 import RefundPolicy from './pages/RefundPolicy';
 import ContactUs from './pages/ContactUs';
-import NewHomePage from './pages/new-home-page';
+import NewHomePage from './pages/ok';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function App() {

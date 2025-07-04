@@ -1,4 +1,4 @@
-export { default as NewHomePage } from './new-home-page';
+export { default as NewHomePage } from './ok';
 export { default as PrivacyPolicy } from './PrivacyPolicy';
 export { default as TermsOfService } from './TermsOfService';
 export { default as ReturnPolicy } from './ReturnPolicy';
