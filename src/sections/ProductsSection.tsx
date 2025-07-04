@@ -112,7 +112,7 @@ const ProductsSection = () => {
                         <b className="text-start text-lg tracking-tighter leading-none">
                           POR
                           <br />
-                          BOTTLE
+                          FRASCO
                         </b>
                       </div>
                       <div className="px-2 mb-2 text-black text-xs text-center">
@@ -278,7 +278,7 @@ const ProductsSection = () => {
                         <b className="text-start text-lg tracking-tighter leading-none">
                           POR
                           <br />
-                          BOTTLE
+                          FRASCO
                         </b>
                       </div>
                       <div className="px-2 mb-2 text-black text-xs text-center [text-shadow:none]">
