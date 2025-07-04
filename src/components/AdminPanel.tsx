@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { trafficLogger, TrafficLog } from '../utils/trafficLogger';
-import { Eye, Download, Trash2, RefreshCw, Shield, Users, Block, TrendingUp } from 'lucide-react';
+import { Eye, Download, Trash2, RefreshCw, Shield, Users, Blocks as Block, TrendingUp } from 'lucide-react';
 
 const AdminPanel: React.FC = () => {
   const [logs, setLogs] = useState<TrafficLog[]>([]);
