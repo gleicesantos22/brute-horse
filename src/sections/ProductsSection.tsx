@@ -1,24 +1,25 @@
-import "bootstrap-icons/font/bootstrap-icons.css";
+// import "bootstrap-icons/font/bootstrap-icons.css";
 
 const productCards = [
   {
-    badge: { text: "BASIC", color: "blue" as const },
-    title: "3 Bottles",
-    subtitle: "90 days supply",
+    badge: { text: "¡MÁS POPULAR!", color: "blue" as const },
+    title: "3 FRASCOS",
+    subtitle: "90 DÍAS DE USO",
+    // image: "https://i.imgur.com/gTcOoJ7.png",
     image: "/images/small-3-v2.PNG",
     price: "69",
-    savings: "YOU SAVE $300",
-    features: ["180 Days Guarantee"],
+    savings: "¡AHORRA $432!",
+    features: ["GARANTÍA DE 60 DÍAS"],
     cardStyle: "secondary",
-    buttonText: "BUY NOW",
+    buttonText: "COMPRAR AHORA",
     buttonStyle: "secondary" as const,
-    originalPrice: "$300",
+    originalPrice: "$639",
     finalPrice: "$207",
     shipping: (
       <>
         +&nbsp;
-        <span className="text-[var(--custom-fourth-color)]">FREE</span>
-        SHIPPING
+        <span className="text-[var(--custom-fourth-color)]">ENVÍO</span>
+        GRATIS
       </>
     ),
     shippingColor: "green" as const,
@@ -27,21 +28,22 @@ const productCards = [
     className: "order-2 lg:order-3",
   },
   {
-    badge: { text: "BEST VALUE!", color: "red" as const },
-    title: "6 Bottles",
-    subtitle: "180 days supply",
+    badge: { text: "¡MEJOR VALOR!", color: "red" as const },
+    title: "6 FRASCOS",
+    subtitle: "180 DÍAS DE USO",
+    // image: "https://i.postimg.cc/zH3WNjBw/6BOTTLE.png",
     image: "/images/small-6-v2.PNG",
     price: "49",
-    savings: "YOU SAVE $600",
-    features: ["Biggest Discount", "180 Days Guarantee"],
+    savings: " ¡AHORRA $1279!",
+    features: ["MAYOR DESCUENTO", "GARANTÍA DE 60 DÍAS"],
     cardStyle: "primary",
-    buttonText: "BUY NOW",
+    buttonText: "COMPRAR AHORA",
     buttonStyle: "primary" as const,
-    originalPrice: "$594",
-    finalPrice: "$294",
+    originalPrice: "$1279",
+    finalPrice: "$307",
     shipping: (
       <b className="text-[var(--custom-secondary-color)] text-[16.2px] font-extrabold">
-        +&nbsp;FREE SHIPPING
+        +&nbsp;ENVÍO GRATIS
       </b>
     ),
     shippingColor: "yellow" as const,
@@ -50,19 +52,20 @@ const productCards = [
     className: "order-1 lg:order-2 md:-translate-y-8",
   },
   {
-    badge: { text: "MOST POPULAR", color: "gray" as const },
-    title: "1 Bottle",
-    subtitle: "30 days supply",
+    badge: { text: "BÁSICO", color: "gray" as const },
+    title: "1 FRASCO",
+    subtitle: "30 DÍAS DE USO",
+    // image: "https://i.imgur.com/ojDbZ0n.png",
     image: "/images/small-bottle.png",
-    price: "79",
-    savings: "YOU SAVE $240",
-    features: ["180 Days Guarantee"],
+    price: "87",
+    savings: "¡AHORRA $92!",
+    features: ["GARANTÍA DE 60 DÍAS"],
     cardStyle: "secondary",
-    buttonText: "BUY NOW",
+    buttonText: "COMPRAR AHORA",
     buttonStyle: "secondary" as const,
-    originalPrice: "$198",
-    finalPrice: "$79",
-    shipping: "+9.95 SHIPPING",
+    originalPrice: "$179",
+    finalPrice: "$87",
+    shipping: "+9.95 ENVÍO",
     shippingColor: "blue" as const,
     link: "https://lucas-digitalbr.mycartpanda.com/checkout/188271611:1",
     borderColor: "gray" as const,
@@ -83,7 +86,7 @@ const ProductsSection = () => {
               >
                 <a className="p-2 bg-white block rounded-2xl overflow-hidden text-white border-6 border-white drop-shadow-[0_0_2.5px_blue] shadow-[0_0_10px_#23418F] [text-shadow:0px_2px_rgba(0,0,0,0.64)] str-ignore-click">
                   <div className="bg-[radial-gradient(var(--custom-primary-color),black)] w-full h-full rounded-b-xl rounded-t-xl">
-                    {/* Desktop */}
+                    {/* <!-- desktop --> */}
                     <div className="hidden lg:block text-center [text-shadow:0px_2px_rgba(0,0,0,0.6392156863)] pb-5">
                       <div className="rounded-t-xl py-1 text-xl text-[#23418F] italic [text-shadow:none] px-2 font-extrabold bg-white ">
                         {card?.badge?.text}
@@ -107,9 +110,9 @@ const ProductsSection = () => {
                           {card?.price}
                         </b>
                         <b className="text-start text-lg tracking-tighter leading-none">
-                          PER
+                          POR
                           <br />
-                          BOTTLE
+                          FRASCO
                         </b>
                       </div>
                       <div className="px-2 mb-2 text-black text-xs text-center">
@@ -120,7 +123,6 @@ const ProductsSection = () => {
                         </div>
                         {card?.features.map((feature, index) => (
                           <div
-                            key={index}
                             className={`uppercase py-[2.3px] px-2 rounded-lg text-white border-t border-dashed border-[#ffffff6b] ${
                               index === card?.features?.length - 1
                                 ? "border-y border-dashed border-[#0000006b]"
@@ -161,7 +163,7 @@ const ProductsSection = () => {
                       </div>
                     </div>
 
-                    {/* Mobile */}
+                    {/* <!-- mobile --> */}
                     <div className="lg:hidden text-center [text-shadow:0px_2px_rgba(0,0,0,0.6392156863)] rounded-b-2xl">
                       <div className="py-2 font-extrabold italic text-[var(--custom-primary-color)] text-xl bg-white [text-shadow:none]">
                         {card?.badge?.text}
@@ -190,9 +192,9 @@ const ProductsSection = () => {
                               {card?.price}
                             </b>
                             <b className="text-start text-[11.7px] tracking-tighter leading-none">
-                              PER
+                              POR
                               <br />
-                              BOTTLE
+                              FRASCO
                             </b>
                           </div>
                           <div className="mb-2 text-[11px] text-black">
@@ -204,7 +206,6 @@ const ProductsSection = () => {
 
                             {card?.features.map((feature, index) => (
                               <div
-                                key={index}
                                 className={`uppercase py-[2.3px] px-2 text-white border-t border-dashed border-[#ffffff6b] ${
                                   index === card?.features?.length - 1
                                     ? "border-y border-dashed border-[#0000006b]"
@@ -247,10 +248,10 @@ const ProductsSection = () => {
                 </a>
               </div>
             ) : (
-              <div key={index} className={`${card.className ? card.className : ""}`}>
+              <div className={`${card.className ? card.className : ""}`}>
                 <a className="p-2 block rounded-2xl overflow-hidden text-white border-6 border-white shadow-[0_0_10px_#23418F] [text-shadow:0px_2px_rgba(0,0,0,0.64)] str-ignore-click">
                   <div className="w-full h-full rounded-b-xl">
-                    {/* Desktop */}
+                    {/* <!-- desktop --> */}
                     <div className="hidden lg:block text-center text-[var(--custom-third-color)] [text-shadow:0px_2px_rgba(0,0,0,0.6392156863)]">
                       <div className="rounded-t-xl py-1 text-xl bg-[var(--primary-color-light)]  italic [text-shadow:none] px-2 font-extrabold ">
                         {card?.badge.text}
@@ -275,9 +276,9 @@ const ProductsSection = () => {
                           {card.price}
                         </b>
                         <b className="text-start text-lg tracking-tighter leading-none">
-                          PER
+                          POR
                           <br />
-                          BOTTLE
+                          FRASCO
                         </b>
                       </div>
                       <div className="px-2 mb-2 text-black text-xs text-center [text-shadow:none]">
@@ -326,7 +327,7 @@ const ProductsSection = () => {
                       </div>
                     </div>
 
-                    {/* Mobile */}
+                    {/* <!-- mobile --> */}
                     <div className="lg:hidden text-center [text-shadow:0px_2px_rgba(0,0,0,0.6392156863)] rounded-b-2xl">
                       <div className="grid grid-cols-2 gap-2 p-2">
                         <div>
@@ -354,9 +355,9 @@ const ProductsSection = () => {
                               {card.price}
                             </b>
                             <b className="text-start text-[11.7px] tracking-tighter leading-none">
-                              PER
+                              POR
                               <br />
-                              BOTTLE
+                              FRASCO
                             </b>
                           </div>
                           <div className="mb-2 text-[11px] text-[var(--custom-third-color)]">
