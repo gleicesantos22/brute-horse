@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 import { Accordion } from "../components/ui/Accordian";
 import { Triangle } from "lucide-react";
 import ProductsSection from "../sections/ProductsSection";
@@ -275,6 +275,38 @@ const NewHomePage = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const VIDEO_KEY = "686731ada8708dbefeb5541f-resume"; // Your video progress key
+    const TRIGGER_TIME = 2126; // 35 minutes 26 seconds
+    const CHECK_INTERVAL = 1000; // Check every second
+
+    const hiddenSections = document.getElementsByClassName(
+      "hidden-section"
+    ) as HTMLCollectionOf<HTMLElement>;
+
+    let hasShown = false;
+
+    const showHiddenSections = () => {
+      Array.from(hiddenSections).forEach((el) => {
+        el.style.display = "block";
+      });
+    };
+
+    const interval = setInterval(() => {
+      const resumeValue = localStorage.getItem(VIDEO_KEY);
+      if (!resumeValue) return;
+
+      const currentTime = parseFloat(resumeValue);
+      if (!isNaN(currentTime) && currentTime >= TRIGGER_TIME && !hasShown) {
+        hasShown = true;
+        showHiddenSections();
+        clearInterval(interval); // Stop checking
+      }
+    }, CHECK_INTERVAL);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       <div className="py-10 px-4 text-center bg-black">
@@ -294,7 +326,7 @@ const NewHomePage = () => {
       <section id="video-section"></section>
 
       {/* Products Section */}
-      <div>
+      <div className="hidden-section hidden" >
         <div className="bg-black text-white py-4 mb-8">
           <h2 className="text-2xl font-bold text-center mb-2 mt-4 mb-2 mt-4">
             Últimas unidades de BRUTE HORSE disponibles
@@ -313,7 +345,7 @@ const NewHomePage = () => {
         //   boxShadow:
         //     "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset",
         // }}
-        className="bg-[url('/images/guarantee-bg.webp')] bg-cover bg-white bg-no-repeat"
+        className="hidden-section hidden bg-[url('/images/guarantee-bg.webp')] bg-cover bg-white bg-no-repeat"
       >
         <div className="bg-[rgb(255,255,255,0.3)] backdrop-opacity-10 h-full w-full">
           <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
@@ -383,7 +415,7 @@ const NewHomePage = () => {
         </div>
       </div>
       {/* Product Section */}
-      <div>
+      <div className="hidden-section hidden">
         <div className="bg-black text-white py-4 mb-8">
           <h2 className="text-2xl font-bold text-center mb-2 mt-4">
             Últimas unidades de BRUTE HORSE disponibles
@@ -398,7 +430,7 @@ const NewHomePage = () => {
       </div>
 
       {/* FAQ Section */}
-      <div className="bg-[url('/images/faq-bg.webp')] bg-cover bg-center ">
+      <div className="hidden-section hidden bg-[url('/images/faq-bg.webp')] bg-cover bg-center ">
         <div className="py-10 px-10">
           <h1 className="text-2xl md:text-4xl font-bold text-center text-gray-100 mb-8 leading-tight tracking-tight">
             Preguntas Frecuentes
@@ -410,7 +442,7 @@ const NewHomePage = () => {
       </div>
 
       {/* Products Section */}
-      <div>
+      <div className="hidden-section hidden">
         <div className="bg-black text-white py-4 mb-8">
           <h2 className="text-2xl font-bold text-center mb-2 mt-4">
             Últimas unidades de BRUTE HORSE disponibles
