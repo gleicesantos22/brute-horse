@@ -314,7 +314,7 @@ const NewHomePage = () => {
           <h3 className="text-white font-serif font-bold text-md md:text-xl my-[10px]">
             El doctor más caliente del porno revela:
           </h3>
-          <h1 className="text-white font-serif font-bold text-2xl md:text-4xl my-[10px] inline leading-tight">
+          <h1 className="text-white font-serif font-bold text-md sm:text-lg md:text-3xl lg:text-4xl my-[10px] inline leading-tight">
             El truco del caballo despierta
             <span className="text-[#E02222]">
               "erecciones animales en 6h"
