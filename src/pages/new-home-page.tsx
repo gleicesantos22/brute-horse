@@ -317,7 +317,7 @@ const NewHomePage = () => {
           <h1 className="text-white font-serif font-bold text-md sm:text-lg md:text-3xl lg:text-4xl my-[10px] inline leading-tight">
             El truco del caballo despierta
             <span className="text-[#E02222]">
-              "erecciones animales en 6h"
+              erecciones animales en 6h
             </span>{" "}
             y ya salvó a más de 27.000 hombres casados
           </h1>
