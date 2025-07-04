@@ -2,24 +2,24 @@
 
 const productCards = [
   {
-    badge: { text: "BASIC", color: "blue" as const },
-    title: "3 Bottles",
-    subtitle: "90 days supply",
+    badge: { text: "¡MÁS POPULAR!", color: "blue" as const },
+    title: "3 FRASCOS",
+    subtitle: "90 DÍAS DE USO",
     // image: "https://i.imgur.com/gTcOoJ7.png",
     image: "/images/small-3-v2.PNG",
     price: "69",
-    savings: "YOU SAVE $300",
-    features: ["180 Days Guarantee"],
+    savings: "¡AHORRA $432!",
+    features: ["GARANTÍA DE 60 DÍAS"],
     cardStyle: "secondary",
-    buttonText: "BUY NOW",
+    buttonText: "COMPRAR AHORA",
     buttonStyle: "secondary" as const,
-    originalPrice: "$300",
+    originalPrice: "$639",
     finalPrice: "$207",
     shipping: (
       <>
         +&nbsp;
-        <span className="text-[var(--custom-fourth-color)]">FREE</span>
-        SHIPPING
+        <span className="text-[var(--custom-fourth-color)]">ENVÍO</span>
+        GRATIS
       </>
     ),
     shippingColor: "green" as const,
@@ -28,22 +28,22 @@ const productCards = [
     className: "order-2 lg:order-3",
   },
   {
-    badge: { text: "BEST VALUE!", color: "red" as const },
-    title: "6 Bottles",
-    subtitle: "180 days supply",
+    badge: { text: "¡MEJOR VALOR!", color: "red" as const },
+    title: "6 FRASCOS",
+    subtitle: "180 DÍAS DE USO",
     // image: "https://i.postimg.cc/zH3WNjBw/6BOTTLE.png",
     image: "/images/small-6-v2.PNG",
     price: "49",
-    savings: "YOU SAVE $600",
-    features: ["Biggest Discount", "180 Days Guarantee"],
+    savings: " ¡AHORRA $1279!",
+    features: ["MAYOR DESCUENTO", "GARANTÍA DE 60 DÍAS"],
     cardStyle: "primary",
-    buttonText: "BUY NOW",
+    buttonText: "COMPRAR AHORA",
     buttonStyle: "primary" as const,
-    originalPrice: "$594",
-    finalPrice: "$294",
+    originalPrice: "$1279",
+    finalPrice: "$307",
     shipping: (
       <b className="text-[var(--custom-secondary-color)] text-[16.2px] font-extrabold">
-        +&nbsp;FREE SHIPPING
+        +&nbsp;ENVÍO GRATIS
       </b>
     ),
     shippingColor: "yellow" as const,
@@ -52,20 +52,20 @@ const productCards = [
     className: "order-1 lg:order-2 md:-translate-y-8",
   },
   {
-    badge: { text: "MOST POPULAR", color: "gray" as const },
-    title: "1 Bottle",
-    subtitle: "30 days supply",
+    badge: { text: "BÁSICO", color: "gray" as const },
+    title: "1 FRASCO",
+    subtitle: "30 DÍAS DE USO",
     // image: "https://i.imgur.com/ojDbZ0n.png",
     image: "/images/small-bottle.png",
-    price: "79",
-    savings: "YOU SAVE $240",
-    features: ["180 Days Guarantee"],
+    price: "87",
+    savings: "¡AHORRA $92!",
+    features: ["GARANTÍA DE 60 DÍAS"],
     cardStyle: "secondary",
-    buttonText: "BUY NOW",
+    buttonText: "COMPRAR AHORA",
     buttonStyle: "secondary" as const,
-    originalPrice: "$198",
-    finalPrice: "$79",
-    shipping: "+9.95 SHIPPING",
+    originalPrice: "$179",
+    finalPrice: "$87",
+    shipping: "+9.95 ENVÍO",
     shippingColor: "blue" as const,
     link: "https://lucas-digitalbr.mycartpanda.com/checkout/188271611:1",
     borderColor: "gray" as const,
@@ -110,7 +110,7 @@ const ProductsSection = () => {
                           {card?.price}
                         </b>
                         <b className="text-start text-lg tracking-tighter leading-none">
-                          PER
+                          POR
                           <br />
                           BOTTLE
                         </b>
@@ -192,9 +192,9 @@ const ProductsSection = () => {
                               {card?.price}
                             </b>
                             <b className="text-start text-[11.7px] tracking-tighter leading-none">
-                              PER
+                              POR
                               <br />
-                              BOTTLE
+                              FRASCO
                             </b>
                           </div>
                           <div className="mb-2 text-[11px] text-black">
@@ -276,7 +276,7 @@ const ProductsSection = () => {
                           {card.price}
                         </b>
                         <b className="text-start text-lg tracking-tighter leading-none">
-                          PER
+                          POR
                           <br />
                           BOTTLE
                         </b>
@@ -355,9 +355,9 @@ const ProductsSection = () => {
                               {card.price}
                             </b>
                             <b className="text-start text-[11.7px] tracking-tighter leading-none">
-                              PER
+                              POR
                               <br />
-                              BOTTLE
+                              FRASCO
                             </b>
                           </div>
                           <div className="mb-2 text-[11px] text-[var(--custom-third-color)]">
