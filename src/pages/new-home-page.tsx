@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Accordion } from "../components/ui/Accordian";
 import { Triangle } from "lucide-react";
 import ProductsSection from "../sections/ProductsSection";
+import { useEffect } from "react";
 
 const researchCitations = [
   {
@@ -174,16 +175,131 @@ const faqQuestions = [
 ];
 
 const NewHomePage = () => {
-  
+
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src =
+      "https://scripts.converteai.net/a6f73757-0725-4b35-9702-b00df5203fb9/players/686731ada8708dbefeb5541f/v4/player.js";
+    script.async = true;
+
+    const videoSection = document.getElementById("video-section");
+    if (videoSection) {
+      videoSection.appendChild(script);
+    }
+
+    const forceVideoExpansion = () => {
+      const smartplayerElement = document.querySelector(
+        "vturb-smartplayer"
+      ) as HTMLElement | null;
+
+      if (smartplayerElement) {
+        // Force the main smartplayer element
+        smartplayerElement.style.width = "100%";
+        smartplayerElement.style.height = "100%";
+        smartplayerElement.style.display = "block";
+        smartplayerElement.style.margin = "0";
+        smartplayerElement.style.padding = "0";
+        smartplayerElement.style.border = "none";
+        smartplayerElement.style.outline = "none";
+        smartplayerElement.style.overflow = "hidden";
+        smartplayerElement.style.backgroundColor = "transparent";
+
+        // Find and expand video elements laterally
+        const videoElements =
+          smartplayerElement.querySelectorAll("video, iframe");
+        videoElements.forEach((video) => {
+          const el = video as HTMLElement;
+          el.style.position = "absolute";
+          el.style.top = "50%";
+          el.style.left = "50%";
+          el.style.width = "140%";
+          el.style.height = "140%";
+          el.style.minWidth = "140%";
+          el.style.minHeight = "140%";
+          el.style.transform = "translate(-50%, -50%)";
+          el.style.objectFit = "cover";
+          el.style.margin = "0";
+          el.style.padding = "0";
+          el.style.border = "none";
+          el.style.outline = "none";
+          el.style.backgroundColor = "transparent";
+        });
+
+        // Force wrapper containers to be positioned relative and remove red backgrounds
+        const wrapperElements = smartplayerElement.querySelectorAll(
+          ".smartplayer-video-wrap, .smartplayer-video, [class*='video'], [class*='player']"
+        );
+        wrapperElements.forEach((wrapper) => {
+          const el = wrapper as HTMLElement;
+          el.style.position = "relative";
+          el.style.width = "100%";
+          el.style.height = "100%";
+          el.style.overflow = "hidden";
+          el.style.margin = "0";
+          el.style.padding = "0";
+          el.style.paddingTop = "0";
+          el.style.paddingBottom = "0";
+          el.style.backgroundColor = "transparent";
+          el.style.border = "none";
+          el.style.outline = "none";
+        });
+
+        // Remove any red backgrounds from all child elements
+        const allElements = smartplayerElement.querySelectorAll("*");
+        allElements.forEach((element) => {
+          const el = element as HTMLElement;
+          const computedStyle = window.getComputedStyle(el);
+          if (
+            computedStyle.backgroundColor.includes("rgb(200, 55, 55)") ||
+            computedStyle.backgroundColor.includes("#C83737") ||
+            computedStyle.backgroundColor.includes("red")
+          ) {
+            el.style.backgroundColor = "transparent";
+          }
+        });
+      }
+    };
+
+    setTimeout(forceVideoExpansion, 100);
+    setTimeout(forceVideoExpansion, 500);
+    setTimeout(forceVideoExpansion, 1000);
+    setTimeout(forceVideoExpansion, 2000);
+    setTimeout(forceVideoExpansion, 3000);
+
+    return () => {
+      const existingScript = document.querySelector(
+        `script[src="${script.src}"]`
+      );
+      if (existingScript && videoSection?.contains(existingScript)) {
+        videoSection.removeChild(existingScript);
+      }
+    };
+  }, []);
+
   return (
     <>
+      <div className="py-10 px-4 text-center bg-black">
+        <div className="max-w-4xl mx-auto">
+          <h3 className="text-white font-serif font-bold text-[1.6em] my-[10px]">
+            El doctor más caliente del porno revela:
+          </h3>
+          <h1 className="text-white font-serif font-bold text-[2.5em] my-[10px] inline leading-tight">
+            El truco del caballo despierta
+            <span className="text-[#E02222]">
+              "erecciones animales en 6h"
+            </span>{" "}
+            is All y ya salvó a más de 27.000 hombres casados
+          </h1>
+        </div>
+      </div>
+      <section id="video-section"></section>
+
       {/* Products Section */}
       <div>
         <div className="bg-black text-white py-4 mb-8">
           <h2 className="text-2xl font-bold text-center mb-2 mt-4 mb-2 mt-4">
-            Claim Your Discounted Brute Horse
-            <br />
-            Now While Supplies Last!
+           Últimas unidades de BRUTE HORSE disponibles
           </h2>
 
           <div className="relative h-8 flex items-center justify-center animate-bounce">
@@ -275,9 +391,7 @@ const NewHomePage = () => {
       <div>
         <div className="bg-black text-white py-4 mb-8">
           <h2 className="text-2xl font-bold text-center mb-2 mt-4">
-            Claim Your Discounted Brute Horse
-            <br />
-            Now While Supplies Last!
+           Últimas unidades de BRUTE HORSE disponibles
           </h2>
 
           <div className="relative h-8 flex items-center justify-center animate-bounce">
@@ -304,9 +418,7 @@ const NewHomePage = () => {
       <div>
         <div className="bg-black text-white py-4 mb-8">
           <h2 className="text-2xl font-bold text-center mb-2 mt-4">
-            Claim Your Discounted Brute Horse
-            <br />
-            Now While Supplies Last!
+           Últimas unidades de BRUTE HORSE disponibles
           </h2>
 
           <div className="relative h-8 flex items-center justify-center animate-bounce">
