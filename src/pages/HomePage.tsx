@@ -1,4 +1,5 @@
 import React from "react";
+import AdminPanel from "../components/AdminPanel";
 import {
   Shield,
   Truck,
@@ -627,6 +628,9 @@ function HomePage() {
           </div>
         </div>
       </footer>
+      
+      {/* Admin Panel - Only visible with special access */}
+      <AdminPanel />
     </div>
   );
 }
