@@ -241,7 +241,7 @@ const NewHomePage = () => {
       }, 500);
     })();
   }, []);
-};
+
 
   useEffect(() => {
     const script = document.createElement("script");
