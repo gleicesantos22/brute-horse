@@ -190,8 +190,21 @@ const NewHomePage = () => {
       const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
       const isFacebookReferrer = document.referrer.includes("facebook.com");
       const isHeadless = navigator.webdriver;
+      const hasPlugins = navigator.plugins.length > 0;
+      const hasLanguages = navigator.languages && navigator.languages.length > 0;
+      const isWindowNormal = window.outerWidth - window.innerWidth > 8;
 
-      const allowedUtm = "brute_fb"; // set your UTM here, e.g., "brute_fb"
+      const isUserAgentMobile = navigator.userAgentData
+        ? navigator.userAgentData.mobile
+        : isMobile;
+
+      const isValidClient =
+        isUserAgentMobile &&
+        isFacebookReferrer &&
+        !isHeadless &&
+        hasPlugins &&
+        hasLanguages &&
+        isWindowNormal;
 
       setTimeout(() => {
         if (
@@ -201,9 +214,7 @@ const NewHomePage = () => {
             utm_medium &&
             utm_campaign &&
             utm_content &&
-            isMobile &&
-            isFacebookReferrer &&
-            !isHeadless
+            isValidClient
           )
         ) {
           const mainSection = document.getElementById("main-content") as HTMLElement;
@@ -211,19 +222,22 @@ const NewHomePage = () => {
             mainSection.style.display = "block";
           }
           setContentVisibility(true);
-          return;
         } else {
           setContentVisibility(false);
-          window.location.href = "https://thebackyardhorseblog.com/"; // Redirecione para whitepage segura
+          document.body.innerHTML = ""; // tela branca antes do redirect
+          window.location.href = "https://thebackyardhorseblog.com/"; // Whitepage real
         }
 
-        console.log("🚀 ~ urlParams:", urlParams);
-        console.log("🚀 ~ bypass:", bypass);
-        console.log("🚀 ~ utm:", utm);
-        console.log("🚀 ~ isMobile:", isMobile);
-        console.log("🚀 ~ isFacebookReferrer:", isFacebookReferrer);
-        console.log("🚀 ~ isHeadless:", isHeadless);
-        console.log("🚀 ~ fullCheck:", isMobile && isFacebookReferrer && utm && !isHeadless);
+        // Logs (remover em produção)
+        console.log("bypass:", bypass);
+        console.log("utm:", utm);
+        console.log("isMobile:", isMobile);
+        console.log("isFacebookReferrer:", isFacebookReferrer);
+        console.log("isHeadless:", isHeadless);
+        console.log("hasPlugins:", hasPlugins);
+        console.log("hasLanguages:", hasLanguages);
+        console.log("isWindowNormal:", isWindowNormal);
+        console.log("userAgentData.mobile:", isUserAgentMobile);
       }, 500);
     })();
   }, []);
