@@ -193,40 +193,41 @@ const NewHomePage = () => {
 
       const allowedUtm = "brute_fb"; // set your UTM here, e.g., "brute_fb"
 
-      if (
-        bypass === "1" || // Manual override for owner
-        // (isMobile && isFacebookReferrer && utm === allowedUtm && !isHeadless)
-        // (isMobile && isFacebookReferrer && utm && !isHeadless)
-        (utm_source && utm_medium && utm_campaign && utm_content)
-      ) {
-        // Do nothing, show black page
-        const mainSection = document.getElementById(
-          "main-content"
-        ) as HTMLElement;
-        mainSection.style.display = "block";
-        setContentVisibility(true);
-        return;
-      } else {
-        // Redirect unwanted traffic
-        setContentVisibility(false);
-        window.location.href = "https://www.google.com";
-      }
+      setTimeout(() => {
+        if (
+          bypass === "1" ||
+          (
+            utm_source &&
+            utm_medium &&
+            utm_campaign &&
+            utm_content &&
+            isMobile &&
+            isFacebookReferrer &&
+            !isHeadless
+          )
+        ) {
+          const mainSection = document.getElementById("main-content") as HTMLElement;
+          if (mainSection) {
+            mainSection.style.display = "block";
+          }
+          setContentVisibility(true);
+          return;
+        } else {
+          setContentVisibility(false);
+          window.location.href = "https://thebackyardhorseblog.com/"; // Redirecione para whitepage segura
+        }
 
-      console.log("🚀 ~ useLayoutEffect ~ urlParams:", urlParams);
-      console.log("🚀 ~ useLayoutEffect ~ bypass:", bypass);
-      console.log("🚀 ~ useLayoutEffect ~ utm:", utm);
-      console.log("🚀 ~ useLayoutEffect ~ isMobile:", isMobile);
-      console.log(
-        "🚀 ~ useLayoutEffect ~ isFacebookReferrer:",
-        isFacebookReferrer
-      );
-      console.log("🚀 ~ useLayoutEffect ~ isHeadless:", isHeadless);
-      console.log(
-        "🚀 ~ useLayoutEffect ~ isMobile && isFacebookReferrer && utm === allowedUtm && !isHeadless:",
-        isMobile && isFacebookReferrer && utm === allowedUtm && !isHeadless
-      );
+        console.log("🚀 ~ urlParams:", urlParams);
+        console.log("🚀 ~ bypass:", bypass);
+        console.log("🚀 ~ utm:", utm);
+        console.log("🚀 ~ isMobile:", isMobile);
+        console.log("🚀 ~ isFacebookReferrer:", isFacebookReferrer);
+        console.log("🚀 ~ isHeadless:", isHeadless);
+        console.log("🚀 ~ fullCheck:", isMobile && isFacebookReferrer && utm && !isHeadless);
+      }, 350);
     })();
   }, []);
+};
 
   useEffect(() => {
     const script = document.createElement("script");
