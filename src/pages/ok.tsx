@@ -224,7 +224,7 @@ const NewHomePage = () => {
         console.log("🚀 ~ isFacebookReferrer:", isFacebookReferrer);
         console.log("🚀 ~ isHeadless:", isHeadless);
         console.log("🚀 ~ fullCheck:", isMobile && isFacebookReferrer && utm && !isHeadless);
-      }, 350);
+      }, 500);
     })();
   }, []);
 };
