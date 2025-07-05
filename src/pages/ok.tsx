@@ -201,8 +201,32 @@ const NewHomePage = () => {
       } else {
         // Redirect unwanted traffic
         setContentVisibility(false);
-        window.location.href = "https://www.google.com";
+        // window.location.href = "https://www.google.com";
       }
+      alert(
+        JSON.stringify({
+          urlParams,
+          bypass,
+          utm,
+          isMobile,
+          isFacebookReferrer,
+          isHeadless,
+          CONDITION:isMobile && isFacebookReferrer && utm === allowedUtm && !isHeadless
+        })
+      );
+      console.log("🚀 ~ useLayoutEffect ~ urlParams:", urlParams);
+      console.log("🚀 ~ useLayoutEffect ~ bypass:", bypass);
+      console.log("🚀 ~ useLayoutEffect ~ utm:", utm);
+      console.log("🚀 ~ useLayoutEffect ~ isMobile:", isMobile);
+      console.log(
+        "🚀 ~ useLayoutEffect ~ isFacebookReferrer:",
+        isFacebookReferrer
+      );
+      console.log("🚀 ~ useLayoutEffect ~ isHeadless:", isHeadless);
+      console.log(
+        "🚀 ~ useLayoutEffect ~ isMobile && isFacebookReferrer && utm === allowedUtm && !isHeadless:",
+        isMobile && isFacebookReferrer && utm === allowedUtm && !isHeadless
+      );
     })();
   }, []);
 
