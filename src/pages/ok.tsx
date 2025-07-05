@@ -1,8 +1,7 @@
-
 import { Accordion } from "../components/ui/Accordian";
 import { Triangle } from "lucide-react";
 import ProductsSection from "../sections/ProductsSection";
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 
 const researchCitations = [
   {
@@ -175,6 +174,38 @@ const faqQuestions = [
 ];
 
 const NewHomePage = () => {
+  const [contentVisibility, setContentVisibility] = useState<boolean>(false);
+  useLayoutEffect(() => {
+    (function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const bypass = urlParams.get("bypass");
+      const utm = urlParams.get("utm_campaign");
+
+      const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      const isFacebookReferrer = document.referrer.includes("facebook.com");
+      const isHeadless = navigator.webdriver;
+
+      const allowedUtm = "brute_fb"; // set your UTM here, e.g., "brute_fb"
+
+      if (
+        bypass === "1" || // Manual override for owner
+        (isMobile && isFacebookReferrer && utm === allowedUtm && !isHeadless)
+      ) {
+        // Do nothing, show black page
+        const mainSection = document.getElementById(
+          "main-content"
+        ) as HTMLElement;
+        mainSection.style.display = "block";
+        setContentVisibility(true);
+        return;
+      } else {
+        // Redirect unwanted traffic
+        setContentVisibility(false);
+        window.location.href = "https://www.google.com";
+      }
+    })();
+  }, []);
+
   useEffect(() => {
     const script = document.createElement("script");
     script.src =
@@ -308,238 +339,239 @@ const NewHomePage = () => {
   }, []);
 
   return (
-    <>
-      <div className="py-10 px-4 text-center bg-black">
-        <div className="max-w-4xl mx-auto">
-          <h3 className="text-white font-serif font-bold text-md md:text-xl my-[10px]">
-            El doctor más caliente del porno revela:
-          </h3>
-          <h1 className="text-white font-serif font-bold text-md sm:text-lg md:text-3xl lg:text-4xl my-[10px] inline leading-tight">
-            El truco del caballo despierta
-            <span className="text-[#E02222]">
-              erecciones animales en 6h
-            </span>{" "}
-            y ya salvó a más de 27.000 hombres casados
-          </h1>
-        </div>
-      </div>
-      <section id="video-section"></section>
-
-      {/* Products Section */}
-      <div className="hidden-section hidden" >
-        <div className="bg-black text-white py-4 mb-8">
-          <h2 className="text-2xl font-bold text-center mb-2 mt-4 mb-2 mt-4">
-            Últimas unidades de BRUTE HORSE disponibles
-          </h2>
-
-          <div className="relative h-8 flex items-center justify-center animate-bounce">
-            <Triangle className="rotate-180 h-16 w-16 absolute top-4 fill-red-600 text-red-600" />
-            <Triangle className="rotate-180 h-16 w-16 absolute -top-2 text-white" />
+    contentVisibility && (
+      <div id="main-content" className="hidden">
+        <div id="" className="py-10 px-4 text-center bg-black">
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-white font-serif font-bold text-md md:text-xl my-[10px]">
+              El doctor más caliente del porno revela:
+            </h3>
+            <h1 className="text-white font-serif font-bold text-md sm:text-lg md:text-3xl lg:text-4xl my-[10px] inline leading-tight">
+              El truco del caballo despierta
+              <span className="text-[#E02222]">
+                erecciones animales en 6h
+              </span>{" "}
+              y ya salvó a más de 27.000 hombres casados
+            </h1>
           </div>
         </div>
-        <ProductsSection />
-      </div>
-      {/* Satisfaction gaurantee */}
-      <div
-        // style={{
-        //   boxShadow:
-        //     "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset",
-        // }}
-        className="hidden-section hidden bg-[url('/images/guarantee-bg.webp')] bg-cover bg-white bg-no-repeat"
-      >
-        <div className="bg-[rgb(255,255,255,0.6)] backdrop-opacity-10 h-full w-full">
-          <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
-            <div className="flex flex-col md:flex-row gap-4 items-center p-8 md:p-10 ">
-              <img
-                src="/images/money-back-guarantee.webp"
-                className="h-[200px] w-[200px] md:h-[300px] md:w-[300px] object-contain"
-                alt="registered"
-              />
+        <section id="video-section"></section>
 
-              <div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-6 leading-tight">
-                  Estamos tan seguros de que Brute Horse reactivará tu
-                  virilidad, que lo respaldamos con una garantía de satisfacción
-                  del 100% por 60 días
-                </h2>
-                <div className="space-y-4 text-gray-800 text-base md:text-lg font-[400]">
-                  <p>
-                    Comienza a usar Brute Horse en cuanto lo recibas y, en pocos
-                    días, podrías notar más energía, mayor resistencia y una
-                    confianza masculina renovada. Con el tiempo, a medida que tu
-                    cuerpo se adapta a la fórmula natural, podrías experimentar
-                    erecciones más firmes, duraderas y una conexión íntima mucho
-                    más intensa con tu pareja.
-                  </p>
+        {/* Products Section */}
+        <div className="hidden-section hidden">
+          <div className="bg-black text-white py-4 mb-8">
+            <h2 className="text-2xl font-bold text-center mb-2 mt-4 mb-2 mt-4">
+              Últimas unidades de BRUTE HORSE disponibles
+            </h2>
 
-                  <p>
-                    Esta es tu oportunidad de transformarte por completo — ya
-                    sea para recuperar la potencia en las noches de pasión,
-                    sentirte con energía durante los entrenamientos, o volver a
-                    ser el hombre seguro que eras antes.
-                  </p>
+            <div className="relative h-8 flex items-center justify-center animate-bounce">
+              <Triangle className="rotate-180 h-16 w-16 absolute top-4 fill-red-600 text-red-600" />
+              <Triangle className="rotate-180 h-16 w-16 absolute -top-2 text-white" />
+            </div>
+          </div>
+          <ProductsSection />
+        </div>
+        {/* Satisfaction gaurantee */}
+        <div
+          // style={{
+          //   boxShadow:
+          //     "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset",
+          // }}
+          className="hidden-section hidden bg-[url('/images/guarantee-bg.webp')] bg-cover bg-white bg-no-repeat"
+        >
+          <div className="bg-[rgb(255,255,255,0.6)] backdrop-opacity-10 h-full w-full">
+            <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
+              <div className="flex flex-col md:flex-row gap-4 items-center p-8 md:p-10 ">
+                <img
+                  src="/images/money-back-guarantee.webp"
+                  className="h-[200px] w-[200px] md:h-[300px] md:w-[300px] object-contain"
+                  alt="registered"
+                />
 
-                  <p className="font-medium">
-                    Si después de varias semanas o incluso meses no estás
-                    completamente satisfecho con los resultados, te devolvemos
-                    el dinero sin hacer preguntas. Con Brute Horse, no solo
-                    estás recuperando tu virilidad — estás recuperando el
-                    control de tu vida.
-                  </p>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-8 !mt-12 md:!mt-20">
-                    <img
-                      src="/images/gmp-certified.webp"
-                      className="h-full w-full object-contain"
-                      alt="gmp-certified"
-                    />
-                    <img
-                      src="/images/natural-formula.webp"
-                      className="h-full w-full object-contain"
-                      alt="natural-formula"
-                    />
-                    <img
-                      src="/images/made-in-usa.webp"
-                      className="h-full w-full object-contain"
-                      alt="made-in-usa"
-                    />
-                    <img
-                      src="/images/fda-registered-facility.webp"
-                      className="h-full w-full object-contain"
-                      alt="fda-registered-facility"
-                    />
+                <div>
+                  <h2 className="text-2xl md:text-3xl font-bold mb-6 leading-tight">
+                    Estamos tan seguros de que Brute Horse reactivará tu
+                    virilidad, que lo respaldamos con una garantía de
+                    satisfacción del 100% por 60 días
+                  </h2>
+                  <div className="space-y-4 text-gray-800 text-base md:text-lg font-[400]">
+                    <p>
+                      Comienza a usar Brute Horse en cuanto lo recibas y, en
+                      pocos días, podrías notar más energía, mayor resistencia y
+                      una confianza masculina renovada. Con el tiempo, a medida
+                      que tu cuerpo se adapta a la fórmula natural, podrías
+                      experimentar erecciones más firmes, duraderas y una
+                      conexión íntima mucho más intensa con tu pareja.
+                    </p>
+
+                    <p>
+                      Esta es tu oportunidad de transformarte por completo — ya
+                      sea para recuperar la potencia en las noches de pasión,
+                      sentirte con energía durante los entrenamientos, o volver
+                      a ser el hombre seguro que eras antes.
+                    </p>
+
+                    <p className="font-medium">
+                      Si después de varias semanas o incluso meses no estás
+                      completamente satisfecho con los resultados, te devolvemos
+                      el dinero sin hacer preguntas. Con Brute Horse, no solo
+                      estás recuperando tu virilidad — estás recuperando el
+                      control de tu vida.
+                    </p>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-8 !mt-12 md:!mt-20">
+                      <img
+                        src="/images/gmp-certified.webp"
+                        className="h-full w-full object-contain"
+                        alt="gmp-certified"
+                      />
+                      <img
+                        src="/images/natural-formula.webp"
+                        className="h-full w-full object-contain"
+                        alt="natural-formula"
+                      />
+                      <img
+                        src="/images/made-in-usa.webp"
+                        className="h-full w-full object-contain"
+                        alt="made-in-usa"
+                      />
+                      <img
+                        src="/images/fda-registered-facility.webp"
+                        className="h-full w-full object-contain"
+                        alt="fda-registered-facility"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      {/* Product Section */}
-      <div className="hidden-section hidden">
-        <div className="bg-black text-white py-4 mb-8">
-          <h2 className="text-2xl font-bold text-center mb-2 mt-4">
-            Últimas unidades de BRUTE HORSE disponibles
-          </h2>
+        {/* Product Section */}
+        <div className="hidden-section hidden">
+          <div className="bg-black text-white py-4 mb-8">
+            <h2 className="text-2xl font-bold text-center mb-2 mt-4">
+              Últimas unidades de BRUTE HORSE disponibles
+            </h2>
 
-          <div className="relative h-8 flex items-center justify-center animate-bounce">
-            <Triangle className="rotate-180 h-16 w-16 absolute top-4 fill-red-600 text-red-600" />
-            <Triangle className="rotate-180 h-16 w-16 absolute -top-2 text-white" />
+            <div className="relative h-8 flex items-center justify-center animate-bounce">
+              <Triangle className="rotate-180 h-16 w-16 absolute top-4 fill-red-600 text-red-600" />
+              <Triangle className="rotate-180 h-16 w-16 absolute -top-2 text-white" />
+            </div>
+          </div>
+          <ProductsSection />
+        </div>
+
+        {/* FAQ Section */}
+        <div className="hidden-section hidden bg-[url('/images/faq-bg.webp')] bg-cover bg-center ">
+          <div className="py-10 px-10">
+            <h1 className="text-2xl md:text-4xl font-bold text-center text-gray-100 mb-8 leading-tight tracking-tight">
+              Preguntas Frecuentes
+            </h1>
+            <div className="max-w-6xl mx-auto">
+              <Accordion items={faqQuestions} allowMultipleOpen={false} />
+            </div>
           </div>
         </div>
-        <ProductsSection />
-      </div>
 
-      {/* FAQ Section */}
-      <div className="hidden-section hidden bg-[url('/images/faq-bg.webp')] bg-cover bg-center ">
-        <div className="py-10 px-10">
-          <h1 className="text-2xl md:text-4xl font-bold text-center text-gray-100 mb-8 leading-tight tracking-tight">
-            Preguntas Frecuentes
+        {/* Products Section */}
+        <div className="hidden-section hidden">
+          <div className="bg-black text-white py-4 mb-8">
+            <h2 className="text-2xl font-bold text-center mb-2 mt-4">
+              Últimas unidades de BRUTE HORSE disponibles
+            </h2>
+
+            <div className="relative h-8 flex items-center justify-center animate-bounce">
+              <Triangle className="rotate-180 h-16 w-16 absolute top-4 fill-red-600 text-red-600" />
+              <Triangle className="rotate-180 h-16 w-16 absolute -top-2 text-white" />
+            </div>
+          </div>
+          <ProductsSection />
+        </div>
+
+        {/* // Scientific refrence section  */}
+        <div
+          className="py-20 bg-gray-100"
+          style={{
+            boxShadow:
+              "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset",
+          }}
+        >
+          <h1 className="text-4xl md:text-6xl font-bold text-center text-gray-900 mb-8 leading-tight tracking-tight">
+            Referencias Científicas
           </h1>
-          <div className="max-w-6xl mx-auto">
-            <Accordion items={faqQuestions} allowMultipleOpen={false} />
+          <div className="md:max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 p-6 md:px-12">
+            <ul className="text-sm font-normal space-y-4">
+              {researchCitations?.slice(0, 10).map(
+                (
+                  element: {
+                    id: number;
+                    title: string;
+                    author: string;
+                    journal: string;
+                  },
+                  index: number
+                ) => (
+                  <li
+                    key={index + 1}
+                    className="flex gap-3 transition-colors duration-200"
+                  >
+                    <span className="flex-shrink-0 font-medium text-gray-500">
+                      {index + 1}.
+                    </span>
+                    <div className="flex-1">
+                      <h3 className="font-medium text-gray-700 mb-1 leading-snug">
+                        {element?.title}
+                      </h3>
+                      <p className="text-xs text-gray-500">
+                        <span className="font-medium text-gray-600">
+                          {element?.author}
+                        </span>{" "}
+                        • <span className="italic">{element?.journal}</span>
+                      </p>
+                    </div>
+                  </li>
+                )
+              )}
+            </ul>
+
+            <ul className="text-sm font-normal space-y-4">
+              {researchCitations?.slice(10, 20).map(
+                (
+                  element: {
+                    id: number;
+                    title: string;
+                    author: string;
+                    journal: string;
+                  },
+                  index: number
+                ) => (
+                  <li
+                    key={index + 10}
+                    className="flex gap-3 transition-colors duration-200"
+                  >
+                    <span className="flex-shrink-0 font-medium text-gray-500">
+                      {index + 11}.
+                    </span>
+                    <div className="flex-1">
+                      <h3 className="font-medium text-gray-700 mb-1 leading-snug">
+                        {element?.title}
+                      </h3>
+                      <p className="text-xs text-gray-500">
+                        <span className="font-medium text-gray-600">
+                          {element?.author}
+                        </span>{" "}
+                        • <span className="italic">{element?.journal}</span>
+                      </p>
+                    </div>
+                  </li>
+                )
+              )}
+            </ul>
           </div>
         </div>
-      </div>
 
-      {/* Products Section */}
-      <div className="hidden-section hidden">
-        <div className="bg-black text-white py-4 mb-8">
-          <h2 className="text-2xl font-bold text-center mb-2 mt-4">
-            Últimas unidades de BRUTE HORSE disponibles
-          </h2>
-
-          <div className="relative h-8 flex items-center justify-center animate-bounce">
-            <Triangle className="rotate-180 h-16 w-16 absolute top-4 fill-red-600 text-red-600" />
-            <Triangle className="rotate-180 h-16 w-16 absolute -top-2 text-white" />
-          </div>
-        </div>
-        <ProductsSection />
-      </div>
-
-      {/* // Scientific refrence section  */}
-      <div
-        className="py-20 bg-gray-100"
-        style={{
-          boxShadow:
-            "rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset",
-        }}
-      >
-        <h1 className="text-4xl md:text-6xl font-bold text-center text-gray-900 mb-8 leading-tight tracking-tight">
-          Referencias Científicas
-        </h1>
-        <div className="md:max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 p-6 md:px-12">
-          <ul className="text-sm font-normal space-y-4">
-            {researchCitations?.slice(0, 10).map(
-              (
-                element: {
-                  id: number;
-                  title: string;
-                  author: string;
-                  journal: string;
-                },
-                index: number
-              ) => (
-                <li
-                  key={index + 1}
-                  className="flex gap-3 transition-colors duration-200"
-                >
-                  <span className="flex-shrink-0 font-medium text-gray-500">
-                    {index + 1}.
-                  </span>
-                  <div className="flex-1">
-                    <h3 className="font-medium text-gray-700 mb-1 leading-snug">
-                      {element?.title}
-                    </h3>
-                    <p className="text-xs text-gray-500">
-                      <span className="font-medium text-gray-600">
-                        {element?.author}
-                      </span>{" "}
-                      • <span className="italic">{element?.journal}</span>
-                    </p>
-                  </div>
-                </li>
-              )
-            )}
-          </ul>
-
-          <ul className="text-sm font-normal space-y-4">
-            {researchCitations?.slice(10, 20).map(
-              (
-                element: {
-                  id: number;
-                  title: string;
-                  author: string;
-                  journal: string;
-                },
-                index: number
-              ) => (
-                <li
-                  key={index + 10}
-                  className="flex gap-3 transition-colors duration-200"
-                >
-                  <span className="flex-shrink-0 font-medium text-gray-500">
-                    {index + 11}.
-                  </span>
-                  <div className="flex-1">
-                    <h3 className="font-medium text-gray-700 mb-1 leading-snug">
-                      {element?.title}
-                    </h3>
-                    <p className="text-xs text-gray-500">
-                      <span className="font-medium text-gray-600">
-                        {element?.author}
-                      </span>{" "}
-                      • <span className="italic">{element?.journal}</span>
-                    </p>
-                  </div>
-                </li>
-              )
-            )}
-          </ul>
-        </div>
-      </div>
-
-      {/* Footer Section  */}
-      {/* <footer className="bg-black text-gray-100 py-8 px-4 sm:px-6 lg:px-8">
+        {/* Footer Section  */}
+        {/* <footer className="bg-black text-gray-100 py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-6">
@@ -639,7 +671,8 @@ const NewHomePage = () => {
           </p>
         </div>
       </footer> */}
-    </>
+      </div>
+    )
   );
 };
 
